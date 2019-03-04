@@ -1,5 +1,5 @@
 <template>
-  <b-navbar class="navbar" type="dark" variant="info">
+  <b-navbar id="navbar" class="navbar" type="dark" variant="info">
     <b-navbar-brand>
       <a />
     </b-navbar-brand>
@@ -44,6 +44,7 @@ export default {
   background-color: $blue;
   color: white;
   height: $navbar-height;
+  margin-bottom: 5px;
 }
 .nav-menu {
   display: flex;
@@ -57,9 +58,21 @@ export default {
       color: white;
       text-decoration-line: none;
       background-color: rgba(246, 162, 30, 0);
-    }
-    a:hover {
-      color: $orange;
+      &:hover {
+        color: $orange;
+        &:after {
+          width: 98px;
+        }
+      }
+      &:after {
+        content: '';
+        background-color: $orange;
+        left: inherit;
+        top: 0 + $navbar-height;
+        height: 5px;
+        position: absolute;
+        width: 0;
+      }
     }
   }
 }
