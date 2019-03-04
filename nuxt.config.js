@@ -45,6 +45,7 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+    baseUrl: 'http://playground.ermine.ee/okmovers-api/wp-json/wp/v2/'
   },
 
   /*
