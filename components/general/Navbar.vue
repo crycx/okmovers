@@ -1,10 +1,10 @@
 <template>
-  <b-navbar id="navbar" class="navbar" type="dark" variant="info">
+  <b-navbar id="navbar" class="navbar" type="dark">
     <b-navbar-brand>
       <a />
     </b-navbar-brand>
     <b-navbar-nav class="nav-menu">
-      <b-nav-item v-for="item in menuItems" :key="item.id" class="nav-menu-item">
+      <b-nav-item v-for="item in menuItems" :key="item.id" class="nav-menu-item" :href="item.url">
         {{ item.title }}
       </b-nav-item>
     </b-navbar-nav>
@@ -54,6 +54,8 @@ export default {
   justify-content: space-evenly;
   .nav-menu-item {
     background-color: rgba(246, 162, 30, 0);
+    width: 100%;
+    text-align: center;
     a {
       color: white;
       text-decoration-line: none;
@@ -61,14 +63,14 @@ export default {
       &:hover {
         color: $orange;
         &:after {
-          width: 98px;
+          width: 100%;
         }
       }
       &:after {
         content: '';
         background-color: $orange;
         left: inherit;
-        top: 0 + $navbar-height;
+        top: $navbar-height;
         height: 5px;
         position: absolute;
         width: 0;

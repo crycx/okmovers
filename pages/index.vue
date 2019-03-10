@@ -18,8 +18,4 @@ export default {
 
 <style lang="scss">
 @import '~/assets/globals.scss';
-
-.content {
-  height: unquote('calc(100vh - #{$navbar-height} - #{$footer-height})');
-}
 </style>

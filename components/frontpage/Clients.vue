@@ -1,6 +1,18 @@
 <template>
   <b-jumbotron class="clients">
-    <p>content</p>
+    <div class="row">
+      <div class="col-1">
+        <button>
+          left
+        </button>
+      </div>
+      <div class="col-10" />
+      <div class="col-1">
+        <button>
+          right
+        </button>
+      </div>
+    </div>
   </b-jumbotron>
 </template>
 
@@ -8,7 +20,8 @@
 export default {}
 </script>
 
-<style>
+<style lang="scss">
+@import '@/assets/globals.scss';
 .clients {
   background-color: white;
 }
