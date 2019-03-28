@@ -1,14 +1,31 @@
 <template>
-  <b-navbar id="navbar" class="navbar" type="dark">
-    <b-navbar-brand>
-      <a />
-    </b-navbar-brand>
-    <b-navbar-nav class="nav-menu">
-      <b-nav-item v-for="item in menuItems" :key="item.id" class="nav-menu-item" :href="item.url">
-        {{ item.title }}
-      </b-nav-item>
-    </b-navbar-nav>
-  </b-navbar>
+  <div class="navbar-wrapper">
+    <div class="row">
+      <b-navbar id="navbar" class="navbar" type="dark">
+        <b-navbar-brand>
+          <nuxt-link to="/">
+            <img
+              src="http://via.placeholder.com/50"
+            >
+          </nuxt-link>
+        </b-navbar-brand>
+        <b-navbar-nav class="nav-menu">
+          <nuxt-link v-for="item in menuItems" :key="item.id" :to="{ path: '/' + item.object_slug }">
+            {{ item.title }}  
+          </nuxt-link>
+        </b-navbar-nav>
+        <div class="info-container ml-auto">
+          <div class="row">
+            telnr
+          </div>
+          <div class="row">
+            email
+          </div>
+        </div>
+      </b-navbar>
+    </div>
+    <div class="fake-margin" />
+  </div>
 </template>
 
 <script>
@@ -39,43 +56,75 @@ export default {
 
 <style lang="scss">
 @import '@/assets/globals.scss';
-
+.navbar-wrapper {
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 .navbar {
   background-color: $blue;
   color: white;
   height: $navbar-height;
-  margin-bottom: 5px;
+  width: 100%;
 }
 .nav-menu {
   display: flex;
   list-style-type: none;
   height: 100%;
+  width: 100%;
   align-items: center;
   justify-content: space-evenly;
-  .nav-menu-item {
+  a {
+  }
+  a {
+    position: relative;
+    color: white;
+    text-decoration-line: none;
     background-color: rgba(246, 162, 30, 0);
     width: 100%;
     text-align: center;
-    a {
-      color: white;
-      text-decoration-line: none;
-      background-color: rgba(246, 162, 30, 0);
-      &:hover {
-        color: $orange;
-        &:after {
-          width: 100%;
-        }
-      }
+    &:after {
+      content: '';
+      background-color: $orange;
+      bottom: -18px;
+      height: 5px;
+      left: 0;
+      position: absolute;
+      width: 0;
+    }
+    &:hover {
+      color: $orange;
       &:after {
-        content: '';
-        background-color: $orange;
-        left: inherit;
-        top: $navbar-height;
-        height: 5px;
-        position: absolute;
-        width: 0;
+        width: 100%;
       }
     }
   }
+}
+.nav-link {
+  a {
+    &:after {
+      content: '';
+      background-color: $orange;
+      bottom: -10px;
+      height: 5px;
+      left: 0;
+      position: absolute;
+      width: 0;
+      visibility: hidden;
+    }
+  }
+}
+.nav-menu-item {
+  background-color: rgba(246, 162, 30, 0);
+  width: 100%;
+  text-align: center;
+}
+.info-container {
+  width: 5%;
+}
+.fake-margin {
+  min-width: 100%;
+  min-height: 5px;
 }
 </style>

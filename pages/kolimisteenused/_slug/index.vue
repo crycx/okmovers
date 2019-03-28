@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-3">
           <div class="slug-side-menu">
-            <page-sidebar />
+            <page-sidebar :menu-id="10" />
           </div>
         </div>
         <div class="col-9">
@@ -27,9 +27,6 @@ export default {
   components: {
     ContentRenderer,
     PageSidebar
-  },
-  mounted: function() {
-    console.log(this.$route.params.id)
   }
 }
 </script>

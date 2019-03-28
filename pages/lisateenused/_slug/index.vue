@@ -27,9 +27,6 @@ export default {
   components: {
     ContentRenderer,
     PageSidebar
-  },
-  mounted: function() {
-    console.log(this.$route.params.id)
   }
 }
 </script>

@@ -1,45 +1,64 @@
 <template>
   <b-jumbotron class="top-jumbo">
-    <div class="col-10 offset-1">
-      <div class="row frontpage-header">
-        <h2>Mida me pakume</h2>
+    <div class="row">
+      <div class="col-6 top-jumbo-left">
+        <h2>Miks valida meid?</h2>
+        <p>asdasdasd</p>
+        <div class="row">
+          <div class="col-6">
+            <button class="frontpage-button frontpage-button-green">
+              Esita kiire hinnapäring
+            </button>
+          </div>
+          <div class="col-6">
+            <button class="frontpage-button frontpage-button-blue">
+              Vaata meie kolimisnippe
+            </button>
+          </div>
+        </div>
       </div>
-      <div class="row">
-        <front-page-icon :title="'Eraisikute Kolimine'" :text="'sakdoasmolkdasokld'" />
-        <front-page-icon :title="'Eraisikute Kolimine'" :text="'sakdoasmolkdasokld'" />
-        <front-page-icon :title="'Eraisikute Kolimine'" :text="'sakdoasmolkdasokld'" />
-      </div>
-      <div class="row">
-        <front-page-icon :title="'Eraisikute Kolimine'" :text="'sakdoasmolkdasokld'" />
-        <front-page-icon :title="'Eraisikute Kolimine'" :text="'sakdoasmolkdasokld'" />
-        <front-page-icon :title="'Eraisikute Kolimine'" :text="'sakdoasmolkdasokld'" />
-        <front-page-icon :title="'Eraisikute Kolimine'" :text="'sakdoasmolkdasokld'" />
+      <div class="col-6 top-jumbo-right">
+        <div class="player-container">
+          <div class="player" />
+        </div>
       </div>
     </div>
   </b-jumbotron>
 </template>
 
 <script>
-import FrontPageIcon from '@/components/general/FrontPageIcon.vue'
-export default {
-  components: {
-    FrontPageIcon
-  }
-}
+export default {}
 </script>
 
 <style lang="scss">
 @import '@/assets/globals.scss';
-
-.top-jumbo {
+.frontpage-button {
+  border-radius: 6px;
+  border-width: 0px;
+  padding: 3% 3%;
+}
+.frontpage-button-blue {
   background-color: $blue;
   color: white;
-  padding-top: 1%;
+  &:hover {
+    background-color: $orange;
+  }
 }
-.frontpage-header {
-  display: flex;
-  justify-content: center;
+.frontpage-button-green {
+  border-style: solid;
+  background-color: lightgreen;
+  color: white;
+  &:hover {
+    border-color: $orange;
+    background-color: $orange;
+  }
+}
+.top-jumbo-left {
   text-align: center;
-  color: $orange;
+}
+.player-container {
+  background-color: $blue;
+  height: 360px;
+  width: 640px;
 }
 </style>

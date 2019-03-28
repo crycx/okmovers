@@ -1,6 +1,8 @@
 <template>
   <b-col class="frontpage-icon col-sm">
-    <img class="frontpage-icon-image" src="https://via.placeholder.com/100">
+    <div class="frontpage-icon-container">
+      <img class="frontpage-icon-image" src="~/assets/youtube-logo.png">
+    </div>
     <h3 class="frontpage-icon-header">
       {{ title }}
     </h3>
@@ -29,6 +31,27 @@ export default {
 @import '@/assets/globals.scss';
 .frontpage-icon {
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .frontpage-icon-container {
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: $orange;
+    align-items: center;
+    height: 120px;
+    width: 120px;
+    .frontpage-icon-image {
+      height: 100px;
+      width: 100px;
+    }
+    &:hover {
+      background-color: $orange-dark;
+    }
+  }
   .frontpage-icon-header {
     font-size: 24px;
   }

@@ -4,16 +4,16 @@
       <div class="row">
         <div class="col-3">
           <div class="slug-side-menu">
-            <page-sidebar />
+            <page-sidebar :menu-id="11" />
           </div>
         </div>
         <div class="col-9">
           <div class="heading-container">
             <h1 class="post-title">
-              asd
+              Kolimisnõuanded
             </h1>
           </div>
-          <content-renderer />
+          <content-renderer :id="28" :type="'page'" />
         </div>
       </div>
     </div>
@@ -28,9 +28,7 @@ export default {
     ContentRenderer,
     PageSidebar
   },
-  mounted: function() {
-    console.log(this.$route.params.id)
-  }
+  mounted: function() {}
 }
 </script>
 

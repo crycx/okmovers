@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-3">
           <div class="slug-side-menu">
-            <page-sidebar />
+            <post-sidebar :parent-page="'/ettevottest'" />
           </div>
         </div>
         <div class="col-9">
@@ -21,15 +21,20 @@
 </template>
 
 <script>
-import PageSidebar from '@/components/general/PageSidebar.vue'
+import PostSidebar from '@/components/general/PostSidebar.vue'
 import ContentRenderer from '@/components/general/ContentRenderer.vue'
 export default {
   components: {
     ContentRenderer,
-    PageSidebar
+    PostSidebar
   },
   mounted: function() {
-    console.log(this.$route.params.id)
+    this.getPostData()
+  },
+  methods: {
+    getPostData: function() {
+      console.log(this.$route.path)
+    }
   }
 }
 </script>

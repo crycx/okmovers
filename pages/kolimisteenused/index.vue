@@ -10,10 +10,10 @@
         <div class="col-9">
           <div class="heading-container">
             <h1 class="post-title">
-              asd
+              Kolimisteenused
             </h1>
           </div>
-          <content-renderer />
+          <content-renderer :id="26" :type="'page'" />
         </div>
       </div>
     </div>
@@ -28,9 +28,7 @@ export default {
     ContentRenderer,
     PageSidebar
   },
-  mounted: function() {
-    console.log(this.$route.params.id)
-  }
+  mounted: function() {}
 }
 </script>
 

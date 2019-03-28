@@ -1,17 +1,27 @@
 <template>
   <div class="content page-index">
     <top-jumbo />
+    <reviews />
+    <mid-jumbo />
     <clients />
+    <tips />
   </div>
 </template>
 
 <script>
-import Clients from '@/components/frontpage/Clients.vue'
 import TopJumbo from '@/components/frontpage/TopJumbo.vue'
+import Reviews from '@/components/frontpage/Reviews.vue'
+import Clients from '@/components/frontpage/Clients.vue'
+import MidJumbo from '@/components/frontpage/MidJumbo.vue'
+import Tips from '@/components/frontpage/Tips.vue'
+
 export default {
   components: {
+    TopJumbo,
+    Reviews,
     Clients,
-    TopJumbo
+    MidJumbo,
+    Tips
   }
 }
 </script>
