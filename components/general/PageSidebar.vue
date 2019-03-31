@@ -46,5 +46,19 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '@/assets/globals.scss';
+
+.slug-side-menu-item {
+  a {
+    color: white;
+    &:hover {
+      text-decoration-line: none;
+      color: $orange-dark;
+    }
+    &:active {
+      color: $orange;
+    }
+  }
+}
 </style>

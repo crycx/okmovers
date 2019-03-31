@@ -36,7 +36,8 @@ export default {
 
       this.$axios
         .get(
-          'http://playground.ermine.ee/okmovers-api/wp-json/wp-api-menus/v2/menus/5'
+          'http://playground.ermine.ee/okmovers-api/wp-json/wp-api-menus/v2/menus/' +
+            this.menuId
         )
         .then(function(response) {
           console.log(response)

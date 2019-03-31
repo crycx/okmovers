@@ -2,32 +2,41 @@
   <div class="content page-slug">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-3">
-          <div class="slug-side-menu">
-            <page-sidebar />
-          </div>
-        </div>
-        <div class="col-9">
+        <div class="col-12">
           <div class="heading-container">
             <h1 class="post-title">
               Kontakt
             </h1>
           </div>
-          <content-renderer :id="34" :type="'page'" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4" />
+        <div class="col-8">
+          <div class="col-8 offset-2">
+            <b-form>
+              <div class="form-group">
+                <label for="name">Nimi</label>
+                <b-input type="text" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <b-input type="email" />
+              </div>
+              <div class="form-group">
+                <b-textarea placeholder="Kirjuta meile!" />
+              </div>
+            </b-form>
+          </div>
         </div>
       </div>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
-import PageSidebar from '@/components/general/PageSidebar.vue'
-import ContentRenderer from '@/components/general/ContentRenderer.vue'
 export default {
-  components: {
-    ContentRenderer,
-    PageSidebar
-  },
   mounted: function() {}
 }
 </script>
@@ -40,7 +49,8 @@ export default {
   margin-top: 75px;
   .slug-side-menu-ul {
     list-style-type: none;
-
+    padding-left: 20px;
+    padding-right: 20px;
     .slug-side-menu-item {
       font-size: 20px;
     }

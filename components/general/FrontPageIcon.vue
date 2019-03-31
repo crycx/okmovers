@@ -35,6 +35,9 @@ export default {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  transition-property: color;
+  transition-duration: 0.25s;
+  transition-timing-function: linear;
   .frontpage-icon-container {
     border-radius: 6px;
     display: flex;
@@ -44,6 +47,9 @@ export default {
     align-items: center;
     height: 120px;
     width: 120px;
+    transition-property: background;
+    transition-duration: 0.25s;
+    transition-timing-function: linear;
     .frontpage-icon-image {
       height: 100px;
       width: 100px;

@@ -31,17 +31,23 @@ export default {
     return {
       content: [],
       page: 1,
-      pageLimit: null
+      pageLimit: null,
+      offset: 0
     }
   },
   mounted: function() {
     this.getClients(this.page)
   },
   methods: {
-    getClients: function(page) {
+    getClients: function(page, offset) {
       const self = this
       this.$axios
-        .get('media?parent=150&per_page=6&page=' + page)
+        .get(
+          'media?parent=150&per_page=6&page=' +
+            this.page +
+            '&offset=' +
+            this.offset
+        )
         .then(function(response) {
           self.content = response.data
           self.pageLimit = parseInt(response.headers['x-wp-totalpages'])
@@ -50,27 +56,27 @@ export default {
         })
     },
     incrementPage: function() {
-      console.log(this.page)
-      console.log(this.pageLimit)
-      if (this.page < this.pageLimit) {
-        console.log(this.page)
-        this.page += 1
-        console.log(this.page)
-      } else if (this.page === this.pageLimit) {
-        console.log(this.page)
+      if (this.page === this.pageLimit && this.offset === 6) {
         this.page = 1
-        console.log(this.page)
+        this.offset = 0
+      } else if (this.offset === 6) {
+        this.offset = 0
+        this.page += 1
+      } else {
+        this.offset += 1
       }
-      this.getClients(this.page)
+      this.getClients(this.page, this.offset)
     },
     decrementPage: function() {
-      console.log(this.page)
-      if (this.page === 1) {
+      if (this.page === 1 && this.offset === 0) {
         this.page = this.pageLimit
-      } else {
+      } else if (this.offset === 0) {
         this.page -= 1
+        this.offset = 6
+      } else {
+        this.offset -= 1
       }
-      this.getClients(this.page)
+      this.getClients(this.page, this.offset)
     }
   }
 }

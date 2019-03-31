@@ -29,6 +29,9 @@ export default {}
     display: flex;
     align-items: center;
     justify-content: center;
+    transition-property: background;
+    transition-duration: 0.125s;
+    transition-timing-function: linear;
     .tip-logo {
       height: 90px;
       width: 90px;
@@ -39,6 +42,9 @@ export default {}
     font-size: 18px;
     font-weight: bold;
     text-align: center;
+    transition-property: color;
+    transition-duration: 0.125s;
+    transition-timing-function: linear;
   }
   &:hover {
     .tip-container {

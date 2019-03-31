@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-3">
           <div class="slug-side-menu">
-            <post-sidebar :parent-page="'/ettevottest'" />
+            <post-sidebar :parent-page="'/ettevottest'" :menu-id="14" />
           </div>
         </div>
         <div class="col-9">

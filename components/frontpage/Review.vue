@@ -2,13 +2,13 @@
   <div class="col-6 review">
     <div class="row">
       <div class="col-4 review-left">
-        <img src="https://via.placeholder.com/150" class="client-image">
+        <img :src="imageUrl" class="client-image">
         <p class="client-name">
           {{ title }}
         </p>
       </div>
       <div class="col-8 review-right">
-        <div class="review-speechbubble" v-html="content"/>
+        <div class="review-speechbubble" v-html="content" />
       </div>
     </div>
   </div>
@@ -24,6 +24,10 @@ export default {
     content: {
       type: String,
       default: ''
+    },
+    imageUrl: {
+      type: String,
+      default: 'https://via.placeholder.com/150'
     }
   }
 }
@@ -31,6 +35,9 @@ export default {
 
 <style lang="scss">
 @import '@/assets/globals.scss';
+.review {
+  padding: 0;
+}
 .review-left {
   display: flex;
   text-align: center;
@@ -43,6 +50,8 @@ export default {
     font-size: 20px;
   }
   .client-image {
+    height: 150px;
+    width: 150px;
     max-width: 150px;
     max-height: 150px;
     border-radius: 50%;
@@ -53,7 +62,9 @@ export default {
   justify-content: center;
   .review-speechbubble {
     position: relative;
-    height: 80%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    height: auto;
     width: 80%;
     background-color: $blue;
     color: white;

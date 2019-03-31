@@ -2,12 +2,7 @@
   <div class="content page-slug">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-3">
-          <div class="slug-side-menu">
-            <page-sidebar :menu-id="12" />
-          </div>
-        </div>
-        <div class="col-9">
+        <div class="col-12">
           <div class="heading-container">
             <h1 class="post-title">
               Ladustamisteenused
@@ -21,12 +16,10 @@
 </template>
 
 <script>
-import PageSidebar from '@/components/general/PageSidebar.vue'
 import ContentRenderer from '@/components/general/ContentRenderer.vue'
 export default {
   components: {
-    ContentRenderer,
-    PageSidebar
+    ContentRenderer
   },
   mounted: function() {}
 }

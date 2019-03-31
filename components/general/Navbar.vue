@@ -76,14 +76,15 @@ export default {
   align-items: center;
   justify-content: space-evenly;
   a {
-  }
-  a {
     position: relative;
     color: white;
     text-decoration-line: none;
     background-color: rgba(246, 162, 30, 0);
     width: 100%;
     text-align: center;
+    transition-property: color;
+    transition-duration: 0.25s;
+    transition-timing-function: linear;
     &:after {
       content: '';
       background-color: $orange;
@@ -92,6 +93,9 @@ export default {
       left: 0;
       position: absolute;
       width: 0;
+      transition-property: width;
+      transition-duration: 0.05s;
+      transition-timing-function: linear;
     }
     &:hover {
       color: $orange;
