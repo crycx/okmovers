@@ -2,24 +2,37 @@
   <b-jumbotron class="top-jumbo">
     <div class="row">
       <div class="col-6 top-jumbo-left">
-        <h2>Miks valida meid?</h2>
-        <p>asdasdasd</p>
+        <h2 class="top-jumbo-header">
+          {{ title }}
+        </h2>
+        <div class="underline underline-wide" />
+        <div class="col-8 offset-2">
+          <div class="top-jumbo-text-container" v-html="text" />
+        </div>
         <div class="row">
           <div class="col-6">
-            <button class="frontpage-button frontpage-button-green">
-              Esita kiire hinnapäring
-            </button>
+            <nuxt-link to="/hinnaparing">
+              <button class="frontpage-button frontpage-button-green">
+                Esita kiire hinnapäring
+              </button>
+            </nuxt-link>
           </div>
           <div class="col-6">
-            <button class="frontpage-button frontpage-button-blue">
-              Vaata meie kolimisnippe
-            </button>
+            <nuxt-link to="/kolimisnouanded">
+              <button class="frontpage-button frontpage-button-blue">
+                Vaata meie kolimisnippe
+              </button>
+            </nuxt-link>
           </div>
         </div>
       </div>
       <div class="col-6 top-jumbo-right">
-        <div class="player-container">
-          <div class="player" />
+        <div v-if="videoIsLoaded" class="player-container">
+          <b-embed 
+            type="iframe"
+            aspect="16by9"
+            src="https://www.youtube.com/embed/ZBNKfED4MOg"
+          /></b-embed>
         </div>
       </div>
     </div>
@@ -27,7 +40,37 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data: function() {
+    return {
+      contentVideo: null,
+      videoIsLoaded: false,
+      text: '',
+      title: ''
+    }
+  },
+  mounted: function() {
+    this.getVideo()
+    this.getText()
+  },
+  methods: {
+    getVideo: function() {
+      const self = this
+      this.$axios.get('posts/310').then(function(response) {
+        console.log(response.data.content.rendered)
+        self.contentvideo = response.data.content.rendered
+        self.videoIsLoaded = true
+      })
+    },
+    getText: function() {
+      const self = this
+      this.$axios.get('posts/345').then(function(response) {
+        self.text = response.data.content.rendered
+        self.title = response.data.title.rendered
+      })
+    }
+  }
+}
 </script>
 
 <style lang="scss">
@@ -46,7 +89,7 @@ export default {}
 }
 .frontpage-button-green {
   border-style: solid;
-  background-color: lightgreen;
+  background-color: $green;
   color: white;
   &:hover {
     border-color: $orange;
@@ -55,6 +98,24 @@ export default {}
 }
 .top-jumbo-left {
   text-align: center;
+}
+.top-jumbo-header {
+  margin-bottom: 0;
+  color: $blue;
+}
+.top-jumbo-text-container {
+  p {
+    color: $blue;
+    font-size: 20px;
+  }
+  em {
+    color: $orange;
+    font-style: normal;
+  }
+  del {
+    color: $green;
+    text-decoration: none;
+  }
 }
 .player-container {
   background-color: $blue;

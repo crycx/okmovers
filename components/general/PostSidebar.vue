@@ -44,11 +44,36 @@ export default {
           self.content = response.data.items
           console.log(self.content)
           self.dataIsLoaded = true
+          self.setActive()
         })
+    },
+    setActive: function() {
+      console.log(this.$route.path)
     }
   }
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '@/assets/globals.scss';
+.slug-side-menu-ul {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.slug-side-menu-item {
+  font-size: 12px;
+  a {
+    color: white;
+    .nuxt-link-active {
+      color: $orange;
+    }
+    &:hover {
+      text-decoration-line: none;
+      color: $orange-dark;
+    }
+    &:active {
+      color: $orange;
+    }
+  }
+}
 </style>

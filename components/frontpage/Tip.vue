@@ -1,16 +1,33 @@
 <template>
   <div class="col-2 tip-col">
-    <div class="tip-container">
-      <img src="~/assets/delivery-package.png" class="tip-logo">
-    </div>
+    <nuxt-link
+      :to="'/kolimisnouanded/' + slug"
+    >
+      <div
+        class="tip-container"
+      >
+        <img src="~/assets/delivery-package.png" class="tip-logo">
+      </div>
+    </nuxt-link>
     <div class="text-container">
-      <p>text</p>
+      <p>{{ title }}</p>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    title: {
+      type: String,
+      default: 'text'
+    },
+    slug: {
+      type: String,
+      default: ''
+    }
+  }
+}
 </script>
 
 <style lang="scss">

@@ -42,10 +42,6 @@ export default {
   margin-top: 75px;
   .slug-side-menu-ul {
     list-style-type: none;
-
-    .slug-side-menu-item {
-      font-size: 20px;
-    }
     .slug-side-menu-item:hover {
       color: $orange;
     }

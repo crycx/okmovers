@@ -2,9 +2,10 @@
   <b-jumbotron class="clients">
     <div class="row clients-header-cont">
       <h2 class="clients-header">
-        Meie kliendid
+        MEIE KLIENDID
       </h2>
     </div>
+    <div class="underline" />
     <div class="row">
       <div class="col-1 clients-button-col">
         <button class="clients-button-left clients-button" @click="decrementPage" />
@@ -92,11 +93,14 @@ export default {
   justify-content: center;
   .clients-header {
     color: $orange;
+    margin-bottom: 0;
   }
 }
 .clients-button-col {
   display: flex;
   align-content: center;
+  flex-direction: column;
+  justify-content: center;
   .clients-button {
     background-color: transparent;
     width: 0;
@@ -104,15 +108,21 @@ export default {
     border-style: solid;
   }
   .clients-button-left {
-    border-width: 100px 50px 100px 0;
+    border-width: 25px 50px 25px 0;
     border-color: transparent $orange transparent transparent;
+    transition-property: border-color;
+    transition-duration: 0.25s;
+    transition-timing-function: linear;
     &:hover {
       border-color: transparent $orange-dark transparent transparent;
     }
   }
   .clients-button-right {
-    border-width: 100px 0 100px 50px;
+    border-width: 25px 0 25px 50px;
     border-color: transparent transparent transparent $orange;
+    transition-property: border-color;
+    transition-duration: 0.25s;
+    transition-timing-function: linear;
     &:hover {
       border-color: transparent transparent transparent $orange-dark;
     }

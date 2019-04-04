@@ -1,9 +1,25 @@
 $blue: #012d6a;
 $orange: #f6a21e;
 $orange-dark: #E48A0F;
+$green: #00cf2d;
 $navbar-height: 50px;
-$footer-height: 100px;
+$footer-height: 265px;
 
 .content {
     min-height: unquote('calc(100vh - #{$navbar-height} - #{$footer-height})');
+}
+
+.underline {
+    color: $orange;
+    height: 5px;
+    background-color: $orange;
+    width: 70px;
+    display: flex;
+    align-self: center;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.underline-wide {
+    width: 400px;
 }

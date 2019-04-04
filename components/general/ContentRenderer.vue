@@ -9,6 +9,10 @@ export default {
       type: Number,
       default: null
     },
+    slug: {
+      type: String,
+      default: null
+    },
     type: {
       type: String,
       default: ''
@@ -28,14 +32,24 @@ export default {
     retrievePageData: function() {
       const self = this
       if (this.type === 'post') {
-        this.$axios.get('posts/' + this.id).then(function(response) {
-          self.content = response.data.content.rendered
-          self.contentIsRendered = true
-        })
+        if (this.id !== null) {
+          this.$axios.get('posts/' + this.id).then(function(response) {
+            self.content = response.data.content.rendered
+            self.contentIsRendered = true
+            console.log(self.content)
+          })
+        } else if (this.slug !== null) {
+          this.$axios.get('posts?slug=' + this.slug).then(function(response) {
+            self.content = response.data[0].content.rendered
+            self.contentIsRendered = true
+            console.log(self.content)
+          })
+        }
       } else if (this.type === 'page') {
         this.$axios.get('pages/' + this.id).then(function(response) {
           self.content = response.data.content.rendered
           self.contentIsRendered = true
+          console.log(self.content)
         })
       }
     }

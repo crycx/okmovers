@@ -41,21 +41,6 @@ export default {
 
 <style lang="scss">
 @import '@/assets/globals.scss';
-.slug-side-menu {
-  background-color: $blue;
-  color: white;
-  margin-top: 75px;
-  .slug-side-menu-ul {
-    list-style-type: none;
-
-    .slug-side-menu-item {
-      font-size: 20px;
-    }
-    .slug-side-menu-item:hover {
-      color: $orange;
-    }
-  }
-}
 .heading-container {
   text-align: center;
   .post-title {

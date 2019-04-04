@@ -18,8 +18,7 @@ export default {
 </script>
 <style>
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -29,7 +28,13 @@ html {
   box-sizing: border-box;
   max-width: 100%;
 }
-
+body {
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+button:focus {
+  outline: none;
+}
 .jumbotron {
   border-radius: 0;
 }

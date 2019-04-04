@@ -1,12 +1,15 @@
 <template>
   <b-jumbotron class="tips">
     <h2 class="tips-header">
-      Kolimisnõuanded
+      KOLIMISNÕUANDED
     </h2>
+    <div class="underline ml-auto mr-auto" />
     <div class="row">
       <tip
         v-for="item in content"
         :key="item.id"
+        :title="item.title.rendered"
+        :slug="item.slug"
       />
     </div>
   </b-jumbotron>
@@ -20,22 +23,19 @@ export default {
   },
   data: function() {
     return {
-      content: [
-        { id: 1 },
-        { id: 2 },
-        { id: 3 },
-        { id: 4 },
-        { id: 5 },
-        { id: 6 },
-        { id: 7 },
-        { id: 1 },
-        { id: 2 },
-        { id: 3 },
-        { id: 4 },
-        { id: 5 },
-        { id: 6 },
-        { id: 7 }
-      ]
+      content: null
+    }
+  },
+  mounted: function() {
+    this.getData()
+  },
+  methods: {
+    getData: function() {
+      const self = this
+      this.$axios.get('posts?categories=8').then(function(response) {
+        console.log(response)
+        self.content = response.data
+      })
     }
   }
 }
@@ -49,6 +49,16 @@ export default {
   .tips-header {
     color: $orange;
     text-align: center;
+    margin-bottom: 0;
+  }
+  .header-underline {
+    color: $orange;
+    height: 5px;
+    background-color: $orange;
+    width: 70px;
+    display: flex;
+    align-self: center;
+    margin-bottom: 10px;
   }
 }
 </style>

@@ -64,11 +64,14 @@ export default {
     position: relative;
     padding-top: 5%;
     padding-bottom: 5%;
+    padding-right: 20px;
+    padding-left: 20px;
     height: auto;
     width: 80%;
     background-color: $blue;
     color: white;
     text-align: center;
+    font-size: 15px;
     &:after {
       position: absolute;
       content: '';

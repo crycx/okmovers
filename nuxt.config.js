@@ -1,3 +1,4 @@
+/* eslint-disable no-dupe-keys */
 const pkg = require('./package')
 
 module.exports = {
@@ -13,13 +14,20 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      {
+        rel: 'stylesheet',
+        type: 'font',
+        href: '"https://fonts.googleapis.com/css?family=Montserrat:400,500,600"'
+      }
+    ]
   },
 
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: 'transparent' },
 
   /*
   ** Global CSS

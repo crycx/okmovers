@@ -10,16 +10,22 @@
           </nuxt-link>
         </b-navbar-brand>
         <b-navbar-nav class="nav-menu">
-          <nuxt-link v-for="item in menuItems" :key="item.id" :to="{ path: '/' + item.object_slug }">
+          <nuxt-link v-for="item in menuItems" :key="item.id" :to="{ path: '/' + item.object_slug }" :class="item.object_slug">
             {{ item.title }}  
           </nuxt-link>
         </b-navbar-nav>
-        <div class="info-container ml-auto">
+        <div class="info-container">
           <div class="row">
-            telnr
+            <img src="https://via.placeholder.com/20">
+            <a href="tel:5047817">
+              5047817
+            </a>
           </div>
           <div class="row">
-            email
+            <img src="https://via.placeholder.com/20">
+            <a href="mailto:info@okmovers.ee">
+              INFO@OKMOVERS.EE
+            </a>
           </div>
         </div>
       </b-navbar>
@@ -67,14 +73,21 @@ export default {
   color: white;
   height: $navbar-height;
   width: 100%;
+  font-weight: 600;
+}
+.navbar-brand {
+  margin-right: 0;
 }
 .nav-menu {
   display: flex;
   list-style-type: none;
   height: 100%;
-  width: 100%;
+  width: 87%;
   align-items: center;
   justify-content: space-evenly;
+  .hinnaparing {
+    color: $green;
+  }
   a {
     position: relative;
     color: white;
@@ -104,6 +117,12 @@ export default {
       }
     }
   }
+  .nuxt-link-active {
+    color: $orange;
+    &:after {
+      width: 100%;
+    }
+  }
 }
 .nav-link {
   a {
@@ -125,7 +144,15 @@ export default {
   text-align: center;
 }
 .info-container {
-  width: 5%;
+  width: 11%;
+  a {
+    color: $orange;
+    font-weight: 500;
+    &:hover {
+      color: $orange-dark;
+      text-decoration: none;
+    }
+  }
 }
 .fake-margin {
   min-width: 100%;

@@ -49,14 +49,36 @@ export default {
 <style lang="scss">
 @import '@/assets/globals.scss';
 
-.slug-side-menu-item {
-  a {
-    color: white;
-    &:hover {
-      text-decoration-line: none;
-      color: $orange-dark;
+.slug-side-menu {
+  background-color: $blue;
+  color: white;
+  margin-top: 75px;
+  .slug-side-menu-ul {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    list-style-type: none;
+    .slug-side-menu-item {
+      font-size: 18px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      a {
+        color: white;
+
+        &:hover {
+          text-decoration-line: none;
+          color: $orange-dark;
+        }
+        &:active {
+          color: $orange;
+        }
+      }
+      .nuxt-link-active {
+        color: $orange;
+      }
     }
-    &:active {
+    .slug-side-menu-item:hover {
       color: $orange;
     }
   }
