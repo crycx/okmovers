@@ -1,5 +1,5 @@
 <template>
-  <div v-if="contentIsRendered" class="content-container" v-html="content" />
+  <div v-if="contentIsRendered" class="content-container" v-html="content[0].content.rendered" />
 </template>
 
 <script>
@@ -18,14 +18,26 @@ export default {
       default: ''
     }
   },
+  head() {
+    return {
+      title: this.yoastTitle,
+      meta: [
+        {
+          hid: 'description',
+          id: 'description',
+          name: 'description',
+          content: this.yoastDesc
+        }
+      ]
+    }
+  },
   data: function() {
     return {
-      content: 'asd',
-      contentIsRendered: false
+      contentIsRendered: false,
+      content: ''
     }
   },
   mounted: function() {
-    console.log(this.type)
     this.retrievePageData()
   },
   methods: {
@@ -34,21 +46,23 @@ export default {
       if (this.type === 'post') {
         if (this.id !== null) {
           this.$axios.get('posts/' + this.id).then(function(response) {
-            self.content = response.data.content.rendered
+            self.content = response.data
+            self.yoastTitle = response.data._yoast_wpseo_title
+            self.yoastDesc = response.data._yoast_wpseo_metadesc
             self.contentIsRendered = true
             console.log(self.content)
           })
         } else if (this.slug !== null) {
           this.$axios.get('posts?slug=' + this.slug).then(function(response) {
-            self.content = response.data[0].content.rendered
-            self.contentIsRendered = true
+            self.content = response.data
+            self.contentIsLoaded = true
             console.log(self.content)
           })
         }
       } else if (this.type === 'page') {
         this.$axios.get('pages/' + this.id).then(function(response) {
-          self.content = response.data.content.rendered
-          self.contentIsRendered = true
+          self.content = response.data
+          self.contentIsLoaded = true
           console.log(self.content)
         })
       }

@@ -6,7 +6,7 @@
       </div>
       <div class="frontpage-icon-header-container">
         <h3 class="frontpage-icon-header">
-          {{ title }}
+          {{ title.toUpperCase() }}
         </h3>
       </div>
       <div class="frontpage-icon-text" v-html="text" />

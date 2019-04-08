@@ -107,6 +107,7 @@ export default {
   p {
     color: $blue;
     font-size: 20px;
+    font-weight: bold;
   }
   em {
     color: $orange;
