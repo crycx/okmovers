@@ -9,7 +9,11 @@
                 Ettevõttest
               </h1>
             </div>
-            <content-renderer :id="34" :type="'page'" />
+            <div class="row">
+              <div class="col-10 offset-1">
+                <content-renderer :id="34" :type="'page'" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -28,4 +32,8 @@ export default {
 </script>
 
 <style lang="scss">
+.post-title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 </style>

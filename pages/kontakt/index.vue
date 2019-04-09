@@ -3,14 +3,10 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <div class="heading-container">
-            <h1 class="post-title">
-              stuff here as header
-            </h1>
-          </div>
+          <contact-header />
         </div>
       </div>
-      <div class="row">
+      <div class="row contact-form-row">
         <div class="col-4 contacts-container" v-html="contacts" />
         <div class="col-8">
           <b-form>
@@ -45,7 +41,11 @@
 </template>
 
 <script>
+import ContactHeader from '@/components/general/ContactHeader.vue'
 export default {
+  components: {
+    ContactHeader
+  },
   data: function() {
     return {
       contacts: null
@@ -73,11 +73,16 @@ export default {
     color: $orange;
   }
 }
+
+.contact-form-row {
+  margin-bottom: 20px;
+}
 .contacts-container {
   text-align: center;
   border-right-style: solid;
   border-right-color: $blue;
   border-right-width: 1px;
+  margin-bottom: 20px;
   p {
     color: $blue;
   }

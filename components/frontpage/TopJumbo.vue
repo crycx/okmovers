@@ -9,7 +9,7 @@
         <div class="col-8 offset-2">
           <div class="top-jumbo-text-container" v-html="text" />
         </div>
-        <div class="row">
+        <div class="row frontpage-button-row">
           <div class="col-6">
             <nuxt-link to="/hinnaparing">
               <button class="frontpage-button frontpage-button-green">
@@ -122,5 +122,9 @@ export default {
   background-color: $blue;
   height: 360px;
   width: 640px;
+}
+.frontpage-button-row {
+  padding-left: 20%;
+  padding-right: 20%;
 }
 </style>

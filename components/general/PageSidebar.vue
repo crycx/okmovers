@@ -2,7 +2,7 @@
   <ul v-if="dataIsLoaded" class="slug-side-menu-ul">
     <li v-for="item in content" :key="item.id" class="slug-side-menu-item">
       <nuxt-link :to="$route.path + '/' + item.object_slug">
-        {{ item.title }}
+        {{ item.title.toUpperCase() }}
       </nuxt-link>
     </li>
   </ul>

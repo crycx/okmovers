@@ -78,11 +78,14 @@ export default {
   padding-top: 25px;
   .row {
     .left-data-text {
+      font-weight: 600;
       h4 {
+        font-weight: 600;
         color: $orange;
         font-size: 18px;
       }
       p {
+        font-weight: 600;
         em {
           color: $orange;
           font-style: normal;
@@ -91,23 +94,30 @@ export default {
     }
     .center-data-text {
       text-align: center;
+      font-weight: 600;
       p {
+        margin-bottom: 2px;
+        font-weight: 600;
         em {
           color: $green;
           font-style: normal;
         }
         strong {
+          font-weight: 600;
           color: $orange;
           font-weight: normal;
         }
       }
     }
     .right-data-text {
+      font-weight: 600;
       h4 {
+        font-weight: 600;
         color: $orange;
         font-size: 18px;
       }
       p {
+        font-weight: 600;
         em {
           color: $orange;
           font-style: normal;

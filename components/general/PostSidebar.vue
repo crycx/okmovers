@@ -2,7 +2,7 @@
   <ul v-if="dataIsLoaded" class="slug-side-menu-ul">
     <li v-for="item in content" :key="item.id" class="slug-side-menu-item">
       <nuxt-link :to="parentPage + '/' + item.object_slug">
-        {{ item.title }}
+        {{ item.title.toUpperCase() }}
       </nuxt-link>
     </li>
   </ul>
@@ -62,6 +62,7 @@ export default {
 }
 .slug-side-menu-item {
   font-size: 12px;
+  list-style-type: square;
   a {
     color: white;
     .nuxt-link-active {

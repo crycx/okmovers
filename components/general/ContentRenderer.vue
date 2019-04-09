@@ -1,5 +1,5 @@
 <template>
-  <div v-if="contentIsRendered" class="content-container" v-html="content[0].content.rendered" />
+  <div v-if="contentIsRendered" class="content-container" v-html="content" />
 </template>
 
 <script>
@@ -46,7 +46,7 @@ export default {
       if (this.type === 'post') {
         if (this.id !== null) {
           this.$axios.get('posts/' + this.id).then(function(response) {
-            self.content = response.data
+            self.content = response.data.content.rendered
             self.yoastTitle = response.data._yoast_wpseo_title
             self.yoastDesc = response.data._yoast_wpseo_metadesc
             self.contentIsRendered = true
@@ -54,15 +54,15 @@ export default {
           })
         } else if (this.slug !== null) {
           this.$axios.get('posts?slug=' + this.slug).then(function(response) {
-            self.content = response.data
-            self.contentIsLoaded = true
+            self.content = response.data[0].content.rendered
+            self.contentIsRendered = true
             console.log(self.content)
           })
         }
       } else if (this.type === 'page') {
         this.$axios.get('pages/' + this.id).then(function(response) {
-          self.content = response.data
-          self.contentIsLoaded = true
+          self.content = response.data.content.rendered
+          self.contentIsRendered = true
           console.log(self.content)
         })
       }
@@ -75,6 +75,8 @@ export default {
 @import '@/assets/globals.scss';
 .content-container {
   color: $blue;
+  padding-left: 4%;
+  padding-right: 4%;
 }
 .wp-block-image {
   img {

@@ -91,7 +91,7 @@ export default {
         width: 100px;
       }
       &:hover {
-        background-color: $orange-dark;
+        background-color: $blue;
       }
     }
     .frontpage-icon-header {

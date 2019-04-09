@@ -17,7 +17,7 @@
           :slug="item.slug"
         />
       </div>
-      <div class="row">
+      <div class="row midjumbo-bottom-row">
         <front-page-icon
           v-for="item in bottomRowContent"
           :key="item.id"
@@ -83,12 +83,19 @@ export default {
   }
 }
 .midjumbo-top-row {
+  margin-top: 3%;
   width: 80%;
+}
+.midjumbo-bottom-row {
+  margin-top: 2%;
 }
 .frontpage-header {
   display: flex;
   justify-content: center;
   text-align: center;
   color: $orange;
+}
+.fpi-underline {
+  margin-bottom: 100%;
 }
 </style>

@@ -8,10 +8,11 @@
       >
         <img src="~/assets/delivery-package.png" class="tip-logo">
       </div>
+    
+      <div class="text-container">
+        <p>{{ title }}</p>
+      </div>
     </nuxt-link>
-    <div class="text-container">
-      <p>{{ title }}</p>
-    </div>
   </div>
 </template>
 
@@ -38,37 +39,48 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-items: center;
-  .tip-container {
-    width: 125px;
-    height: 125px;
-    background-color: $orange;
-    border-radius: 6px;
+  a {
+    text-decoration: none;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    transition-property: background;
-    transition-duration: 0.125s;
-    transition-timing-function: linear;
-    .tip-logo {
-      height: 90px;
-      width: 90px;
-    }
-  }
-  .text-container {
-    color: $blue;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    transition-property: color;
-    transition-duration: 0.125s;
-    transition-timing-function: linear;
-  }
-  &:hover {
+    justify-items: center;
     .tip-container {
-      background-color: $blue;
+      width: 125px;
+      height: 125px;
+      background-color: $orange;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition-property: background;
+      transition-duration: 0.125s;
+      transition-timing-function: linear;
+      .tip-logo {
+        height: 90px;
+        width: 90px;
+      }
     }
     .text-container {
-      color: $orange;
+      color: $blue;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 10px;
+      transition-property: color;
+      transition-duration: 0.125s;
+      transition-timing-function: linear;
+    }
+  }
+
+  &:hover {
+    a {
+      .tip-container {
+        background-color: $blue;
+      }
+      .text-container {
+        color: $orange;
+      }
     }
   }
 }

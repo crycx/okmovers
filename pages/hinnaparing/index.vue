@@ -35,8 +35,8 @@
                   <b-form-group>
                     <b-textarea v-model="form.list" placeholder="Siia palume sisestada võimalikult täpse asjade loetelu, kas on vaja midagi demonteerida, kas soovite kolimiskaste jne" rows="7" name="Asjade loetelu" />
                   </b-form-group>
-                  <b-form-group>
-                    <b-button @click="sendForm">
+                  <b-form-group class="quote-button-group">
+                    <b-button class="quote-button" @click="sendForm">
                       Saada
                     </b-button>
                   </b-form-group>
@@ -89,5 +89,26 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '@/assets/globals.scss';
+.quote-button-group {
+  display: flex;
+  div {
+    display: flex;
+    justify-content: center;
+    .quote-button {
+      justify-self: center;
+      border: none;
+      background-color: $green;
+      transition-property: background;
+      transition-duration: 0.25s;
+      transition-timing-function: linear;
+      width: 250px;
+      height: 60px;
+      &:hover {
+        background-color: $orange;
+      }
+    }
+  }
+}
 </style>
