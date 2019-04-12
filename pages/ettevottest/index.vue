@@ -27,7 +27,13 @@ export default {
   components: {
     ContentRenderer
   },
-  mounted: function() {}
+  mounted: function() {},
+  head: function() {
+    return {
+      title: 'OK Movers',
+      meta: [{ hid: 'description', name: 'description', content: 'asso pls' }]
+    }
+  }
 }
 </script>
 

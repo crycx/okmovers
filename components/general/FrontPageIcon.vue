@@ -1,5 +1,5 @@
 <template>
-  <b-col class="frontpage-icon col-sm">
+  <div class="frontpage-icon col-sm-12 col-md">
     <nuxt-link :to="'/kolimisteenused/' + slug">
       <div v-if="imageIsRetrived" class="frontpage-icon-container">
         <img class="frontpage-icon-image" :src="imageSrc">
@@ -11,7 +11,7 @@
       </div>
       <div class="frontpage-icon-text" v-html="text" />
     </nuxt-link>
-  </b-col>
+  </div>
 </template>
 
 <script>

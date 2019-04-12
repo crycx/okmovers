@@ -77,10 +77,38 @@ export default {
   color: $blue;
   padding-left: 4%;
   padding-right: 4%;
+  .row {
+    align-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
 }
 .wp-block-image {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  margin: 0;
   img {
-    max-width: 100%;
+    max-height: 150px;
+    max-width: 150px;
+  }
+}
+@media screen and (max-width: $md) {
+  .wp-block-image {
+    display: none;
+  }
+  .content-container {
+    text-align: center;
+    .row {
+      align-content: center;
+      align-items: center;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
   }
 }
 </style>

@@ -2,12 +2,12 @@
   <div class="content page-slug">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-3">
+        <div class="col-md-3 col-sm-12">
           <div class="slug-side-menu">
             <page-sidebar :menu-id="11" />
           </div>
         </div>
-        <div class="col-9">
+        <div class="col-md-9 col-sm-12">
           <div class="heading-container">
             <h1 class="post-title">
               Kolimisnõuanded
@@ -28,7 +28,13 @@ export default {
     ContentRenderer,
     PageSidebar
   },
-  mounted: function() {}
+  mounted: function() {},
+  head: function() {
+    return {
+      title: 'OK Movers',
+      meta: [{ hid: 'description', name: 'description', content: 'asso pls' }]
+    }
+  }
 }
 </script>
 

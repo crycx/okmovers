@@ -27,6 +27,7 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   max-width: 100%;
+  width: 100%;
 }
 body {
   font-family: 'Montserrat', sans-serif;

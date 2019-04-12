@@ -2,7 +2,7 @@
   <div class="content page-slug">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12">
+        <div class="col-sm-12 col-md-10 offset-md-1">
           <div class="heading-container">
             <h1 class="post-title">
               Ladustamisteenused

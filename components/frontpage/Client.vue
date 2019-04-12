@@ -1,5 +1,5 @@
 <template>
-  <div class="col-2 client-image-col">
+  <div class="col-sm-12 col-md-2 client-image-col">
     <img :src="url" class="client-image">
   </div>
 </template>

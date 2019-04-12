@@ -2,8 +2,12 @@ $blue: #012d6a;
 $orange: #f6a21e;
 $orange-dark: #E48A0F;
 $green: #00cf2d;
-$navbar-height: 50px;
 $footer-height: 265px;
+$navbar-height: 50px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
 
 .content {
     min-height: unquote('calc(100vh - #{$navbar-height} - #{$footer-height})');
@@ -21,5 +25,5 @@ $footer-height: 265px;
     margin-right: auto;
 }
 .underline-wide {
-    width: 400px;
+    width: 100%;
 }

@@ -1,15 +1,15 @@
 <template>
   <div class="reviews">
     <div class="row">
-      <div class="col-1 reviews-button-col">
+      <div class="col-1 reviews-button-col d-none d-md-block">
         <button class="reviews-button reviews-button-left" />
       </div>
-      <div class="col-10">
+      <div class="col-sm-12 col-md-10">
         <div v-if="reviewsAreLoaded" class="row">
           <review v-for="item in content" :key="item.id" :title="item.title" :content="item.content" :image-url="item.imageUrl" />
         </div>
       </div>
-      <div class="col-1 reviews-button-col">
+      <div class="col-1 reviews-button-col d-none d-md-block">
         <button class="reviews-button reviews-button-right" />
       </div>
     </div>

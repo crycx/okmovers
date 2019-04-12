@@ -1,13 +1,13 @@
 <template>
-  <div class="col-6 review">
+  <div class="col-md-6 col-sm-12 review">
     <div class="row">
-      <div class="col-4 review-left">
+      <div class="col-md-4 col-sm-12 review-left">
         <img :src="imageUrl" class="client-image">
         <p class="client-name">
           {{ title }}
         </p>
       </div>
-      <div class="col-8 review-right">
+      <div class="col-md-8 col-sm-12 review-right">
         <div class="review-speechbubble" v-html="content" />
       </div>
     </div>
@@ -37,6 +37,7 @@ export default {
 @import '@/assets/globals.scss';
 .review {
   padding: 0;
+  margin-bottom: 15px;
 }
 .review-left {
   display: flex;
@@ -55,6 +56,11 @@ export default {
     max-width: 150px;
     max-height: 150px;
     border-radius: 50%;
+  }
+}
+@media screen and (max-width: $md) {
+  .review-left {
+    padding: 0;
   }
 }
 .review-right {

@@ -1,12 +1,12 @@
 <template>
   <b-jumbotron class="top-jumbo">
     <div class="row">
-      <div class="col-6 top-jumbo-left">
+      <div class="col-sm-12 col-md-6 top-jumbo-left">
         <h2 class="top-jumbo-header">
           {{ title }}
         </h2>
         <div class="underline underline-wide" />
-        <div class="col-8 offset-2">
+        <div class="col-md-8 col-sm-10 offset-md-2 offset-sm-1">
           <div class="top-jumbo-text-container" v-html="text" />
         </div>
         <div class="row frontpage-button-row">
@@ -26,7 +26,7 @@
           </div>
         </div>
       </div>
-      <div class="col-6 top-jumbo-right">
+      <div class="col-6 top-jumbo-right d-none d-md-block">
         <div v-if="videoIsLoaded" class="player-container">
           <b-embed 
             type="iframe"
@@ -76,6 +76,8 @@ export default {
 <style lang="scss">
 @import '@/assets/globals.scss';
 .frontpage-button {
+  font-size: 20px;
+  max-width: 75%;
   border-radius: 6px;
   border-width: 0px;
   padding: 3% 3%;
@@ -126,5 +128,11 @@ export default {
 .frontpage-button-row {
   padding-left: 20%;
   padding-right: 20%;
+}
+@media screen and (max-width: $md) {
+  .frontpage-button-row {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
 }
 </style>

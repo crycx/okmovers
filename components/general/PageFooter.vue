@@ -1,13 +1,13 @@
 <template>
   <div class="container-fluid footer">
-    <div v-if="leftDataLoaded === true && rightDataLoaded === true" class="row">
-      <div class="col-5 left-data-container">
+    <div v-if="leftDataLoaded === true && rightDataLoaded === true && centerDataLoaded === true" class="row">
+      <div class="col-md-5 col-sm-12 left-data-container">
         <div class="left-data-text" v-html="dataLeft.content.rendered" />
       </div>
-      <div class="col-2 center-data-container">
+      <div class="col-md-2 col-sm-12 center-data-container">
         <div class="center-data-text" v-html="dataCenter.content.rendered" />
       </div>
-      <div class="col-5 right-data-container">
+      <div class="col-md-5 col-sm-12 right-data-container">
         <div class="right-data-text" v-html="dataRight.content.rendered" />
         <div class="row link-container-right">
           <div class="footer-link">
@@ -76,6 +76,7 @@ export default {
   color: white;
   height: auto;
   padding-top: 25px;
+  padding-bottom: 25px;
   .row {
     .left-data-text {
       font-weight: 600;
@@ -125,6 +126,15 @@ export default {
       }
     }
   }
+  @media screen and (max-width: $md) {
+    .left-data-text,
+    .right-data-text,
+    .center-data-text {
+      h4 {
+        text-align: center;
+      }
+    }
+  }
   .link-container-right {
     display: flex;
     flex-direction: row;
@@ -136,6 +146,20 @@ export default {
         height: 40px;
         width: 40px;
       }
+    }
+  }
+  @media screen and (max-width: $md) {
+    .link-container-right {
+      padding-left: 0;
+      .footer-link {
+        margin-left: 15px;
+        margin-right: 15px;
+        .footer-link-image {
+          height: 40px;
+          width: 40px;
+        }
+      }
+      justify-content: center;
     }
   }
 }

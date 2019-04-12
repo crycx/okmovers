@@ -7,15 +7,15 @@
     </div>
     <div class="underline" />
     <div class="row">
-      <div class="col-1 clients-button-col">
+      <div class="col-1 clients-button-col d-none d-md-block">
         <button class="clients-button-left clients-button" @click="decrementPage" />
       </div>
-      <div class="col-10">
+      <div class="col-sm-12 col-md-10">
         <div class="row client-images-container">
           <client v-for="item in content" :key="item.id" :url="item.source_url" />
         </div>
       </div>
-      <div class="col-1 clients-button-col">
+      <div class="col-1 clients-button-col d-none d-md-block">
         <button class="clients-button-right clients-button" @click="incrementPage" />
       </div>
     </div>

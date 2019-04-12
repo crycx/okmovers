@@ -4,7 +4,7 @@
       KOLIMISNÕUANDED
     </h2>
     <div class="underline ml-auto mr-auto" />
-    <div class="row">
+    <div class="row tips-row">
       <tip
         v-for="item in content"
         :key="item.id"
@@ -59,6 +59,21 @@ export default {
     display: flex;
     align-self: center;
     margin-bottom: 10px;
+  }
+  .underline {
+    margin-bottom: 40px;
+  }
+}
+@media screen and (max-width: $md) {
+  .tips {
+    padding: 0;
+    .tips-header {
+      padding-top: 15px;
+    }
+  }
+  .tips-row {
+    display: flex;
+    justify-content: center;
   }
 }
 </style>

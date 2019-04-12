@@ -1,7 +1,7 @@
 <template>
   <div class="navbar-wrapper">
     <div class="row">
-      <b-navbar id="navbar" class="navbar" type="dark">
+      <b-navbar id="navbar" toggleable="sm" class="navbar" type="dark">
         <b-navbar-brand>
           <nuxt-link to="/">
             <img
@@ -9,26 +9,30 @@
             >
           </nuxt-link>
         </b-navbar-brand>
-        <b-navbar-nav class="nav-menu">
-          <nuxt-link v-for="item in menuItems" :key="item.id" :to="{ path: '/' + item.object_slug }" :class="item.object_slug">
-            {{ item.title }}  
-          </nuxt-link>
-        </b-navbar-nav>
-        <div class="info-container">
-          <div class="row">
-            <img src="https://via.placeholder.com/20">
-            <a href="tel:5047817">
-              5047817
-            </a>
+        <b-navbar-toggle target="nav-collapse" />
+        <b-collapse id="nav-collapse" is-nav>
+          <b-navbar-nav class="nav-menu">
+            <nuxt-link v-for="item in menuItems" :key="item.id" :to="{ path: '/' + item.object_slug }" :class="item.object_slug">
+              {{ item.title }}  
+            </nuxt-link>
+          </b-navbar-nav>
+          <div class="info-container">
+            <div class="row">
+              <img src="https://via.placeholder.com/20">
+              <a href="tel:5047817">
+                5047817
+              </a>
+            </div>
+            <div class="row">
+              <img src="https://via.placeholder.com/20">
+              <a href="mailto:info@okmovers.ee">
+                INFO@OKMOVERS.EE
+              </a>
+            </div>
           </div>
-          <div class="row">
-            <img src="https://via.placeholder.com/20">
-            <a href="mailto:info@okmovers.ee">
-              INFO@OKMOVERS.EE
-            </a>
-          </div>
-        </div>
+        </b-collapse>
       </b-navbar>
+      </b-collapse>
     </div>
     <div class="fake-margin" />
   </div>
@@ -74,6 +78,12 @@ export default {
   height: $navbar-height;
   width: 100%;
   font-weight: 600;
+  z-index: 9999;
+}
+@media screen and (max-width: $md) {
+  .navbar {
+    height: 70px;
+  }
 }
 .navbar-brand {
   margin-right: 0;
@@ -124,6 +134,61 @@ export default {
     }
   }
 }
+.info-container {
+  width: 11%;
+  a {
+    color: $orange;
+    font-weight: 500;
+    &:hover {
+      color: $orange-dark;
+      text-decoration: none;
+    }
+  }
+}
+@media screen and (max-width: $md) {
+  .info-container {
+    background-color: $blue;
+    width: 100%;
+    text-align: center;
+    .row {
+      display: flex;
+      justify-content: center;
+    }
+    a {
+      color: $orange;
+      font-weight: 500;
+      &:hover {
+        color: $orange-dark;
+        text-decoration: none;
+      }
+    }
+  }
+  .nav-menu {
+    background-color: $blue;
+    width: 100%;
+    margin: 0;
+    z-index: 9999;
+    a {
+      margin-top: 5px;
+      margin-bottom: 5px;
+      &:after {
+        content: '';
+        background-color: transparent;
+        bottom: -18px;
+        height: 5px;
+        left: 0;
+        position: absolute;
+        width: 0;
+        transition-property: width;
+        transition-duration: 0.05s;
+        transition-timing-function: linear;
+      }
+      &:hover {
+        color: $orange;
+      }
+    }
+  }
+}
 .nav-link {
   a {
     &:after {
@@ -143,17 +208,7 @@ export default {
   width: 100%;
   text-align: center;
 }
-.info-container {
-  width: 11%;
-  a {
-    color: $orange;
-    font-weight: 500;
-    &:hover {
-      color: $orange-dark;
-      text-decoration: none;
-    }
-  }
-}
+
 .fake-margin {
   min-width: 100%;
   min-height: 5px;

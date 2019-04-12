@@ -22,6 +22,12 @@ export default {
     Clients,
     MidJumbo,
     Tips
+  },
+  head: function() {
+    return {
+      title: 'OK Movers',
+      meta: [{ hid: 'description', name: 'description', content: 'asso pls' }]
+    }
   }
 }
 </script>

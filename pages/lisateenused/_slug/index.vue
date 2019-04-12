@@ -2,18 +2,18 @@
   <div class="content page-slug">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-3">
+        <div class="col-md-3 col-sm-12">
           <div class="slug-side-menu">
             <post-sidebar :parent-page="'/lisateenused'" :menu-id="13" />
           </div>
         </div>
-        <div class="col-9">
+        <div v-if="contentIsLoaded" class="col-md-9 col-sm-12">
           <div class="heading-container">
             <h1 class="post-title">
-              asd
+              {{ content.title.rendered }}
             </h1>
           </div>
-          <content-renderer />
+          <content-renderer :type="'post'" :slug="this.$route.path.replace('/lisateenused/', '')" />
         </div>
       </div>
     </div>
@@ -27,6 +27,27 @@ export default {
   components: {
     ContentRenderer,
     PostSidebar
+  },
+  data: function() {
+    return {
+      content: null,
+      contentIsLoaded: false
+    }
+  },
+  mounted: function() {
+    this.getData()
+  },
+  methods: {
+    getData: function() {
+      const self = this
+      this.$axios
+        .get('posts?slug=' + this.$route.path.replace('/lisateenused/', ''))
+        .then(function(response) {
+          console.log(response)
+          self.content = response.data[0]
+          self.contentIsLoaded = true
+        })
+    }
   }
 }
 </script>

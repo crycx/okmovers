@@ -37,7 +37,7 @@
                   </b-form-group>
                   <b-form-group class="quote-button-group">
                     <b-button class="quote-button" @click="sendForm">
-                      Saada
+                      SAADA
                     </b-button>
                   </b-form-group>
                 </div>
@@ -79,11 +79,20 @@ export default {
 
       this.$axios({
         method: 'post',
-        url: 'http://localhost:3001/contact',
+        url: 'http://localhost:3001/quote',
         data: quoteFormData
       }).then(function(response) {
         console.log(response)
       })
+    }
+  },
+  head: function() {
+    return {
+      title: 'OK Movers',
+      meta: [
+        { hid: 'description', name: 'description', content: 'asso pls' },
+        { hid: 'keywords', name: 'keywords', content: 'a b c' }
+      ]
     }
   }
 }
@@ -97,6 +106,8 @@ export default {
     display: flex;
     justify-content: center;
     .quote-button {
+      border-radius: 6px;
+      font-size: 20px;
       justify-self: center;
       border: none;
       background-color: $green;

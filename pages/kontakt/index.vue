@@ -7,8 +7,8 @@
         </div>
       </div>
       <div class="row contact-form-row">
-        <div class="col-4 contacts-container" v-html="contacts" />
-        <div class="col-8">
+        <div class="col-md-4 col-sm-12 contacts-container" v-html="contacts" />
+        <div class="col-md-8 col-sm-12">
           <b-form>
             <div class="row">
               <div class="col-6">
@@ -27,7 +27,7 @@
             </div>
             <div class="row">
               <div class="col-12 button-container">
-                <button class="send-button">
+                <button class="send-button" @click="sendForm">
                   SAADA
                 </button>
               </div>
@@ -48,7 +48,12 @@ export default {
   },
   data: function() {
     return {
-      contacts: null
+      contacts: null,
+      form: {
+        name: '',
+        email: '',
+        content: ''
+      }
     }
   },
   mounted: function() {
@@ -60,6 +65,27 @@ export default {
       this.$axios.get('posts/246').then(function(response) {
         self.contacts = response.data.content.rendered
       })
+    },
+    sendForm: function() {
+      const quoteFormData = new FormData()
+
+      quoteFormData.set('name', this.form.name)
+      quoteFormData.set('email', this.form.email)
+      quoteFormData.set('content', this.form.content)
+
+      this.$axios({
+        method: 'post',
+        url: 'http://localhost:3001/contact',
+        data: quoteFormData
+      }).then(function(response) {
+        console.log(response)
+      })
+    }
+  },
+  head: function() {
+    return {
+      title: 'OK Movers',
+      meta: [{ hid: 'description', name: 'description', content: 'asso pls' }]
     }
   }
 }
@@ -91,12 +117,20 @@ export default {
   display: flex;
   justify-content: center;
   .send-button {
-    background-color: $green;
-    border: 0;
+    border-radius: 6px;
+    font-size: 20px;
+    justify-self: center;
+    border: none;
     color: white;
-    width: 200px;
-    height: 50px;
-    font-size: 24px;
+    background-color: $green;
+    transition-property: background;
+    transition-duration: 0.25s;
+    transition-timing-function: linear;
+    width: 250px;
+    height: 60px;
+    &:hover {
+      background-color: $orange;
+    }
   }
 }
 </style>

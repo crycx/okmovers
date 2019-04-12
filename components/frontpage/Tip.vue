@@ -1,5 +1,5 @@
 <template>
-  <div class="col-2 tip-col">
+  <div class="col-md-2 col-sm-6 tip-col">
     <nuxt-link
       :to="'/kolimisnouanded/' + slug"
     >
@@ -70,6 +70,22 @@ export default {
       transition-property: color;
       transition-duration: 0.125s;
       transition-timing-function: linear;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      word-break: break-all;
+      -ms-hyphens: auto;
+      -moz-hyphens: auto;
+      -webkit-hyphens: auto;
+      hyphens: auto;
+      p {
+        word-break: break-all;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+      }
     }
   }
 
@@ -81,6 +97,12 @@ export default {
       .text-container {
         color: $orange;
       }
+    }
+  }
+
+  @media screen and (max-width: $md) {
+    .tip-col {
+      flex: 0 0 33%;
     }
   }
 }
