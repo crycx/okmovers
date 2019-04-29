@@ -25,7 +25,6 @@ export default {
     contentIsLoaded: function() {
       const self = this
       if (this.contentIsLoaded === true) {
-        console.log(this.imageId)
         this.$axios.get('media/' + this.imageId).then(function(response) {
           self.imageUrl = response.data.source_url
           self.imageIsLoaded = true

@@ -33,7 +33,6 @@ export default {
     getData: function() {
       const self = this
       this.$axios.get('posts?categories=8').then(function(response) {
-        console.log(response)
         self.content = response.data
       })
     }

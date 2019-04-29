@@ -55,7 +55,6 @@ export default {
       this.$axios
         .get('posts?categories=6&per_page=2&page=' + self.page)
         .then(function(response) {
-          console.log(response)
           self.content = []
           self.pageLimit = parseInt(response.headers['x-wp-totalpages'])
           for (let i = 0; i < response.data.length; i++) {
@@ -67,18 +66,13 @@ export default {
             self.content.push(review)
           }
           self.contentIsLoaded = true
-          console.log(self.content)
         })
     },
     getImageUrls: function() {
       const self = this
-      console.log(this.content)
-      console.log('imgurls getter')
-      console.log(this.content.length)
       const promises = []
       for (let j = 0; j < this.content.length; j++) {
         // const self = this
-        console.log('pushing promise...')
         promises.push(
           this.$axios
             .get('media/' + this.content[j].imageId)
@@ -89,11 +83,9 @@ export default {
         Promise.all(promises).then(function(response) {
           setTimeout(function() {
             self.reviewsAreLoaded = true
-            console.log(self.content)
           }, 250)
         })
       }
-      console.log(promises)
     },
     incrementPage: function() {
       const pagePre = this.page

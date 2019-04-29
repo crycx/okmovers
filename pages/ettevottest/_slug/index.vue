@@ -35,11 +35,6 @@ export default {
   },
   mounted: function() {
     this.getPostData()
-  },
-  methods: {
-    getPostData: function() {
-      console.log(this.$route.path)
-    }
   }
 }
 </script>

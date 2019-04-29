@@ -50,12 +50,10 @@ export default {
     getContent: function() {
       const self = this
       this.$axios.get('posts/270').then(function(response) {
-        console.log(response)
         self.dataLeft = response.data
         self.leftDataLoaded = true
       })
       this.$axios.get('posts/274').then(function(response) {
-        console.log(response)
         self.dataCenter = response.data
         self.centerDataLoaded = true
       })

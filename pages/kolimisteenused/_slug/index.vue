@@ -57,7 +57,6 @@ export default {
       this.$axios
         .get('posts?slug=' + this.$route.path.replace('/kolimisteenused/', ''))
         .then(function(response) {
-          console.log(response)
           self.content = response.data[0]
           self.contentIsLoaded = true
         })

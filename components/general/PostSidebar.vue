@@ -28,7 +28,6 @@ export default {
   },
   mounted: function() {
     this.getSidebarItems()
-    console.log(this.$route.path)
   },
   methods: {
     getSidebarItems: function() {
@@ -40,15 +39,10 @@ export default {
             this.menuId
         )
         .then(function(response) {
-          console.log(response)
           self.content = response.data.items
-          console.log(self.content)
           self.dataIsLoaded = true
           self.setActive()
         })
-    },
-    setActive: function() {
-      console.log(this.$route.path)
     }
   }
 }

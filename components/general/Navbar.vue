@@ -65,7 +65,6 @@ export default {
         )
         .then(function(response) {
           self.menuItems = response.data.items
-          console.log(self.menuItems)
         })
     }
   }

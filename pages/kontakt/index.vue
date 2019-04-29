@@ -77,9 +77,7 @@ export default {
         method: 'post',
         url: 'http://localhost:3001/contact',
         data: quoteFormData
-      }).then(function(response) {
-        console.log(response)
-      })
+      }).then(function(response) {})
     }
   },
   head: function() {

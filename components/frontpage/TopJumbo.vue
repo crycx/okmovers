@@ -57,7 +57,6 @@ export default {
     getVideo: function() {
       const self = this
       this.$axios.get('posts/310').then(function(response) {
-        console.log(response.data.content.rendered)
         self.contentvideo = response.data.content.rendered
         self.videoIsLoaded = true
       })

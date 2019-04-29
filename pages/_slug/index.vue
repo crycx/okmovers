@@ -28,9 +28,6 @@ export default {
     ContentRenderer,
     PageSidebar
   },
-  mounted: function() {
-    console.log(this.$route.params.id)
-  },
   head: function() {
     return {
       title: 'Kolimisteenused | OK Movers – Kolimine, Transport, Ladustamine'

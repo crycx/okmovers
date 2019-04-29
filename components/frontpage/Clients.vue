@@ -52,8 +52,6 @@ export default {
         .then(function(response) {
           self.content = response.data
           self.pageLimit = parseInt(response.headers['x-wp-totalpages'])
-          console.log(self.content)
-          console.log(self.pageLimit)
         })
     },
     incrementPage: function() {
