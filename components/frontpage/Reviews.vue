@@ -1,7 +1,15 @@
 <template>
   <div class="reviews">
+    <div class="row review-header-row">
+      <div class="col-12">
+        <h2>Kliendid räägivad</h2>
+      </div>
+      <div class="row">
+        <div class="underline" />
+      </div>
+    </div>
     <div class="row">
-      <div class="col-1 reviews-button-col d-none d-md-block">
+      <div class="col-1 reviews-button-col d-none d-md-flex">
         <button class="reviews-button reviews-button-left" />
       </div>
       <div class="col-sm-12 col-md-10">
@@ -9,7 +17,7 @@
           <review v-for="item in content" :key="item.id" :title="item.title" :content="item.content" :image-url="item.imageUrl" />
         </div>
       </div>
-      <div class="col-1 reviews-button-col d-none d-md-block">
+      <div class="col-1 reviews-button-col d-none d-md-flex">
         <button class="reviews-button reviews-button-right" />
       </div>
     </div>
@@ -79,7 +87,10 @@ export default {
             })
         )
         Promise.all(promises).then(function(response) {
-          self.reviewsAreLoaded = true
+          setTimeout(function() {
+            self.reviewsAreLoaded = true
+            console.log(self.content)
+          }, 250)
         })
       }
       console.log(promises)
@@ -105,6 +116,20 @@ export default {
 .reviews {
   padding-top: 5%;
   padding-bottom: 5%;
+  .review-header-row {
+    justify-content: center;
+    margin-bottom: 10px;
+    .col-12 {
+      display: flex;
+      justify-content: center;
+      h2 {
+        justify-content: center;
+        text-align: center;
+        display: flex;
+        color: $orange;
+      }
+    }
+  }
 }
 .reviews-button-col {
   display: flex;

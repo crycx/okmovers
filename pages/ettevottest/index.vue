@@ -30,8 +30,15 @@ export default {
   mounted: function() {},
   head: function() {
     return {
-      title: 'OK Movers',
-      meta: [{ hid: 'description', name: 'description', content: 'asso pls' }]
+      title: 'Ettevõttest | OK Movers – Kolimine, Transport, Ladustamine',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'OK Movers on ettevõte, mille tegevusalaks on kolimisteenused eraisikutele ja juriidilistele isikutele. Oleme oma ala profid ning omame üle 10 aastast kogemust kolimise valdkonnas.'
+        }
+      ]
     }
   }
 }

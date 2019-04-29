@@ -133,6 +133,9 @@ export default {
       h4 {
         text-align: center;
       }
+      p {
+        text-align: center;
+      }
     }
   }
   .link-container-right {

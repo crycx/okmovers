@@ -21,7 +21,20 @@ export default {
   components: {
     ContentRenderer
   },
-  mounted: function() {}
+  mounted: function() {},
+  head: function() {
+    return {
+      title: 'Ladustamine | OK Movers - Kolimine, Transport, Ladustamine',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Ladustamisteenused ja vara ladustamine lihtsalt ja soodsalt. Meie ladu on soe, turvatud ning kaup on soovitud ajal alati kättesaadav.'
+        }
+      ]
+    }
+  }
 }
 </script>
 

@@ -31,8 +31,15 @@ export default {
   mounted: function() {},
   head: function() {
     return {
-      title: 'OK Movers',
-      meta: [{ hid: 'description', name: 'description', content: 'asso pls' }]
+      title: 'Kolimisnõuanded | OK Movers - Kolimine, Transport, Ladustamine',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Meie OK Moversis soovime, et sinu kolimine läheks nii sujuvalt kui võimalik ning selle käigus ei tabaks sind ükski üllatus ega mure. Selleks olemegi koostanud mitmed kolimisnõuanded.'
+        }
+      ]
     }
   }
 }

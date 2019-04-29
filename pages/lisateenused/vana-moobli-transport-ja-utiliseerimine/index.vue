@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-md-3 col-sm-12">
           <div class="slug-side-menu">
-            <post-sidebar :menu-id="11" :parent-page="'/kolimisnouanded'" />
+            <post-sidebar :parent-page="'/lisateenused'" :menu-id="13" />
           </div>
         </div>
         <div v-if="contentIsLoaded" class="col-md-9 col-sm-12">
@@ -13,7 +13,7 @@
               {{ content.title.rendered }}
             </h1>
           </div>
-          <content-renderer :type="'post'" :slug="this.$route.path.replace('/kolimisnouanded/', '')" />
+          <content-renderer :type="'post'" :slug="this.$route.path.replace('/lisateenused/', '')" />
         </div>
       </div>
     </div>
@@ -28,15 +28,23 @@ export default {
     ContentRenderer,
     PostSidebar
   },
-  head: function() {
-    return {
-      title: 'Kolimisteenused | OK Movers – Kolimine, Transport, Ladustamine'
-    }
-  },
   data: function() {
     return {
       content: null,
       contentIsLoaded: false
+    }
+  },
+  head: function() {
+    return {
+      title: 'Vana mööbli transport ja utiliseerimine | OK Movers',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Utiliseerime ja transpordime vana mööblit ning teostame kodumasinate äravedu. Utiliseerime vastavalt soovile kas ühe eseme või terve korteri mööbli kaupa.'
+        }
+      ]
     }
   },
   mounted: function() {
@@ -46,7 +54,7 @@ export default {
     getData: function() {
       const self = this
       this.$axios
-        .get('posts?slug=' + this.$route.path.replace('/kolimisnouanded/', ''))
+        .get('posts?slug=' + this.$route.path.replace('/lisateenused/', ''))
         .then(function(response) {
           console.log(response)
           self.content = response.data[0]

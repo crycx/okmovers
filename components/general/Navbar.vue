@@ -5,10 +5,19 @@
         <b-navbar-brand>
           <nuxt-link to="/">
             <img
-              src="http://via.placeholder.com/50"
+              class="navbar-logo"
+              src="@/assets/okm.png"
             >
           </nuxt-link>
         </b-navbar-brand>
+        <div class="phone-mobile d-sm-block d-md-none">
+          <div class="row phone-mobile-row">
+            <img class="phone-mobile-logo" src="@/assets/phone.png">
+            <a class="phone-mobile-text" href="tel:5047817">
+              5047817
+            </a>
+          </div>
+        </div>
         <b-navbar-toggle target="nav-collapse" />
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav class="nav-menu">
@@ -17,24 +26,23 @@
             </nuxt-link>
           </b-navbar-nav>
           <div class="info-container">
-            <div class="row">
-              <img src="https://via.placeholder.com/20">
-              <a href="tel:5047817">
+            <div class="row d-none d-md-flex">
+              <img class="phone-mobile-logo-small" src="@/assets/phone.png">
+              <a class="phone-text-small" href="tel:5047817">
                 5047817
               </a>
             </div>
-            <div class="row">
-              <img src="https://via.placeholder.com/20">
-              <a href="mailto:info@okmovers.ee">
+            <div class="row mail-row">
+              <img class="mail-logo-small" src="@/assets/mail.png">
+              <a class="mail-text" href="mailto:info@okmovers.ee">
                 INFO@OKMOVERS.EE
               </a>
             </div>
           </div>
         </b-collapse>
       </b-navbar>
-      </b-collapse>
+      <div class="fake-margin" />
     </div>
-    <div class="fake-margin" />
   </div>
 </template>
 
@@ -80,13 +88,57 @@ export default {
   font-weight: 600;
   z-index: 9999;
 }
+.navbar-logo {
+  height: 50px;
+  width: 50px;
+}
 @media screen and (max-width: $md) {
   .navbar {
     height: 70px;
+    padding: 0;
+  }
+  .navbar-brand {
+    padding: 0;
+  }
+  .navbar-toggler {
+    margin-right: 15px;
+  }
+  .navbar-logo {
+    height: 70px;
+    width: 70px;
   }
 }
 .navbar-brand {
   margin-right: 0;
+}
+.phone-mobile-logo {
+  height: 30px;
+  width: 30px;
+  margin-right: 3px;
+}
+.phone-mobile-logo-small {
+  display: flex;
+  align-self: center;
+  height: 20px;
+  width: 20px;
+  margin-right: 3px;
+}
+.mail-logo-small {
+  display: flex;
+  align-self: center;
+  height: 20px;
+  width: 20px;
+  margin-right: 3px;
+}
+.mail-text {
+  display: flex;
+  align-self: center;
+  font-size: 14px;
+}
+.phone-text-small {
+  display: flex;
+  align-self: center;
+  font-size: 14px;
 }
 .nav-menu {
   display: flex;
@@ -161,6 +213,13 @@ export default {
         color: $orange-dark;
         text-decoration: none;
       }
+    }
+  }
+  .phone-mobile-row {
+    a {
+      color: $orange;
+      display: flex;
+      align-self: center;
     }
   }
   .nav-menu {

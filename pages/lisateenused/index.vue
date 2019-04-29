@@ -31,8 +31,15 @@ export default {
   mounted: function() {},
   head: function() {
     return {
-      title: 'OK Movers',
-      meta: [{ hid: 'description', name: 'description', content: 'asso pls' }]
+      title: 'Lisateenused | OK Movers - Kolimine, Transport, Ladustamine',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Pakume rohkelt kolimiselisateenuseid nagu näiteks pakkimist, mööbli utiliseerimist, tehnika utiliseerimist ning transporti ja ladustamist. Leiad endale alati sobiva paketi.'
+        }
+      ]
     }
   }
 }

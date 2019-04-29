@@ -7,7 +7,7 @@
     </div>
     <div class="underline" />
     <div class="row">
-      <div class="col-1 clients-button-col d-none d-md-block">
+      <div class="col-1 clients-button-col d-none d-md-flex">
         <button class="clients-button-left clients-button" @click="decrementPage" />
       </div>
       <div class="col-sm-12 col-md-10">
@@ -15,7 +15,7 @@
           <client v-for="item in content" :key="item.id" :url="item.source_url" />
         </div>
       </div>
-      <div class="col-1 clients-button-col d-none d-md-block">
+      <div class="col-1 clients-button-col d-none d-md-flex">
         <button class="clients-button-right clients-button" @click="incrementPage" />
       </div>
     </div>

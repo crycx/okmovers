@@ -27,6 +27,11 @@ export default {
   components: {
     ContentRenderer,
     PageSidebar
+  },
+  head: function() {
+    return {
+      title: 'Kolimisteenused | OK Movers – Kolimine, Transport, Ladustamine'
+    }
   }
 }
 </script>

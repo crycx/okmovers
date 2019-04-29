@@ -28,6 +28,11 @@ export default {
     ContentRenderer,
     PostSidebar
   },
+  head: function() {
+    return {
+      title: 'Kolimisteenused | OK Movers – Kolimine, Transport, Ladustamine'
+    }
+  },
   mounted: function() {
     this.getPostData()
   },

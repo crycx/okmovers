@@ -18,19 +18,6 @@ export default {
       default: ''
     }
   },
-  head() {
-    return {
-      title: this.yoastTitle,
-      meta: [
-        {
-          hid: 'description',
-          id: 'description',
-          name: 'description',
-          content: this.yoastDesc
-        }
-      ]
-    }
-  },
   data: function() {
     return {
       contentIsRendered: false,

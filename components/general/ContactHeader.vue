@@ -1,10 +1,10 @@
 <template>
   <div class="contact-header container">
     <div class="row">
-      <div v-if="imageIsLoaded" class="col-4 contact-header-logo-col">
+      <div v-if="imageIsLoaded" class="col-2 offset-2 contact-header-logo-col">
         <img class="contact-header-logo" :src="imageUrl">
       </div>
-      <div v-if="contentIsLoaded" class="col-8 contact-header-text-col" v-html="content" />
+      <div v-if="contentIsLoaded" class="col-6 contact-header-text-col" v-html="content" />
     </div>
   </div>
   </div>
@@ -57,8 +57,8 @@ export default {
   margin-bottom: 15px;
 }
 .contact-header-logo {
-  max-width: 150px;
-  max-height: 150px;
+  max-width: 100px;
+  max-height: 100px;
 }
 .contact-header-logo-col {
   display: flex;

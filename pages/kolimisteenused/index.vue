@@ -31,8 +31,15 @@ export default {
   mounted: function() {},
   head: function() {
     return {
-      title: 'OK Movers',
-      meta: [{ hid: 'description', name: 'description', content: 'asso pls' }]
+      title: 'Kolimisteenused | OK Movers - Kolimine, Transport, Ladustamine',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Pakume kolimisteenuseid Tallinnas, Tartus ja üle Eesti. Kolime kõike – ühest mööblitükist kunimitmesaja kohaliste kontoriteni. Garanteerime professionaalse ja kvaliteetse töö. '
+        }
+      ]
     }
   }
 }

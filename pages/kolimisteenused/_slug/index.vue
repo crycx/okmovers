@@ -23,6 +23,7 @@
 <script>
 import PostSidebar from '@/components/general/PostSidebar.vue'
 import ContentRenderer from '@/components/general/ContentRenderer.vue'
+import Utils from '@/assets/utils.js'
 export default {
   components: {
     ContentRenderer,
@@ -31,13 +32,26 @@ export default {
   data: function() {
     return {
       content: null,
-      contentIsLoaded: false
+      contentIsLoaded: false,
+      seoData: null
     }
+  },
+  head: function() {
+    return {
+      title: 'Kolimisteenused | OK Movers – Kolimine, Transport, Ladustamine'
+    }
+  },
+  created: function() {
+    this.getSeo()
   },
   mounted: function() {
     this.getData()
   },
   methods: {
+    getSeo: function() {
+      const slug = this.$route.path.replace('/kolimisteenused/', '')
+      this.seoData = Utils.getSeoData(slug)
+    },
     getData: function() {
       const self = this
       this.$axios

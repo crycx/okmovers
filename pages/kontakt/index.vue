@@ -84,8 +84,7 @@ export default {
   },
   head: function() {
     return {
-      title: 'OK Movers',
-      meta: [{ hid: 'description', name: 'description', content: 'asso pls' }]
+      title: 'Kolimisteenused | OK Movers – Kolimine, Transport, Ladustamine'
     }
   }
 }
@@ -101,6 +100,7 @@ export default {
 }
 
 .contact-form-row {
+  margin-top: 30px;
   margin-bottom: 20px;
 }
 .contacts-container {

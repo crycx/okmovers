@@ -23,12 +23,11 @@ module.exports = {
       }
     ]
   },
-
   /*
   ** Customize the progress-bar color
   */
   loading: { color: 'transparent' },
-
+  transition: 'page',
   /*
   ** Global CSS
   */
@@ -37,7 +36,7 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [],
+  plugins: [{ src: '@/plugins/velocity.js', ssr: false }],
 
   /*
   ** Nuxt.js modules
