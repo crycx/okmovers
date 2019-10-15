@@ -39,7 +39,8 @@ export default {
           content:
             'Pakume rohkelt kolimiselisateenuseid nagu näiteks pakkimist, mööbli utiliseerimist, tehnika utiliseerimist ning transporti ja ladustamist. Leiad endale alati sobiva paketi.'
         }
-      ]
+      ],
+      link: [{ rel: 'canonical', href: 'https://www.okmovers.ee/lisateenused' }]
     }
   }
 }

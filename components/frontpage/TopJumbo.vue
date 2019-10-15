@@ -1,12 +1,12 @@
 <template>
   <b-jumbotron class="top-jumbo">
     <div class="row">
-      <div class="col-sm-12 col-md-6 top-jumbo-left">
+      <div class="col-md-12 col-lg-6 top-jumbo-left">
         <h2 class="top-jumbo-header">
           {{ title }}
         </h2>
-        <div class="underline underline-wide" />
-        <div class="col-md-8 col-sm-10 offset-md-2 offset-sm-1">
+        <div class="underline" />
+        <div class="col-lg-8 col-md-10 offset-lg-2 offset-md-1">
           <div class="top-jumbo-text-container" v-html="text" />
         </div>
         <div class="row frontpage-button-row">
@@ -26,7 +26,7 @@
           </div>
         </div>
       </div>
-      <div class="col-6 top-jumbo-right d-none d-md-block">
+      <div class="col-6 top-jumbo-right d-none d-lg-block">
         <div v-if="videoIsLoaded" class="player-container">
           <b-embed 
             type="iframe"
@@ -128,10 +128,35 @@ export default {
   padding-left: 20%;
   padding-right: 20%;
 }
-@media screen and (max-width: $md) {
+@media screen and (max-width: 1270px) {
+  .frontpage-button {
+    font-size: 18px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1128px) {
+  .frontpage-button {
+    font-size: 14px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1080px) {
+  .midjumbo-top-row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: $lg) {
+  .frontpage-button {
+    font-size: 18px;
+    width: 100%;
+  }
   .frontpage-button-row {
     padding-left: 2%;
     padding-right: 2%;
+  }
+  .frontpage-button {
+    max-width: 100%;
   }
 }
 </style>

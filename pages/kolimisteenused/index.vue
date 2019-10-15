@@ -39,6 +39,12 @@ export default {
           content:
             'Pakume kolimisteenuseid Tallinnas, Tartus ja üle Eesti. Kolime kõike – ühest mööblitükist kunimitmesaja kohaliste kontoriteni. Garanteerime professionaalse ja kvaliteetse töö. '
         }
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          href: 'https://www.okmovers.ee/kolimisteenused'
+        }
       ]
     }
   }

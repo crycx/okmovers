@@ -44,7 +44,8 @@ export default {
           content:
             'Veoteenused juhuks kui on vaja transportida midagi punktist A punkti B. Pakume veoteenuseid Tallinnas, Tartus ja üle terve Eesti.'
         }
-      ]
+      ],
+      link: [{ rel: 'canonical', href: 'https://www.okmovers.ee/veoteenused' }]
     }
   },
   mounted: function() {

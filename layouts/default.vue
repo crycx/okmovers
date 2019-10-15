@@ -1,6 +1,7 @@
 <template>
   <div>
     <navbar />
+    <cookie-law />
     <nuxt />
     <page-footer />
   </div>
@@ -8,15 +9,18 @@
 <script>
 import Navbar from '@/components/general/Navbar.vue'
 import PageFooter from '@/components/general/PageFooter.vue'
+import CookieLaw from '@/components/general/CookieLaw.vue'
 
 export default {
   components: {
     Navbar,
-    PageFooter
+    PageFooter,
+    CookieLaw
   }
 }
 </script>
-<style>
+<style lang="scss">
+@import '@/assets/globals.scss';
 html {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
@@ -28,6 +32,7 @@ html {
   box-sizing: border-box;
   max-width: 100%;
   width: 100%;
+  overflow-x: hidden;
 }
 body {
   font-family: 'Montserrat', sans-serif;
@@ -35,6 +40,15 @@ body {
 }
 button:focus {
   outline: none;
+}
+h1 {
+  overflow-wrap: break-word;
+}
+@media screen and (max-width: $lg) {
+  h1 {
+    overflow-wrap: break-word;
+    font-size: 26px;
+  }
 }
 .jumbotron {
   border-radius: 0;

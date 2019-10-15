@@ -1,6 +1,6 @@
 <template>
   <b-jumbotron class="mid-jumbo">
-    <div class="col-10 offset-1">
+    <div class="col-lg-12 col-md-12 midjumbo-col">
       <div class="row frontpage-header">
         <h2 class="midjumbo-header">
           MIDA ME PAKUME
@@ -82,6 +82,10 @@ export default {
     background-color: $orange;
   }
 }
+.midjumbo-col {
+  padding-left: 10%;
+  padding-right: 10%;
+}
 .midjumbo-top-row {
   margin-top: 3%;
   width: 80%;
@@ -97,5 +101,11 @@ export default {
 }
 .fpi-underline {
   margin-bottom: 100%;
+}
+@media screen and (max-width: 1160px) {
+  .midjumbo-col {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 }
 </style>

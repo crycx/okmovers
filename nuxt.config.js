@@ -32,11 +32,31 @@ module.exports = {
   ** Global CSS
   */
   css: [],
-
+  generate: {
+    routes: [
+      '/kolimisnouanded/millest-alustada-kui-ees-ootab-kolimine',
+      '/kolimisnouanded/plaanis-tellida-kolimisteenus-kui-pikalt-pean-ette-teatama',
+      '/kolimisnouanded/lillede-kolimine-kulma-ilmaga-kuidas-seda-teha',
+      '/kolimisnouanded/ladustamine-milline-on-hea-ladustamiskeskkond',
+      '/kolimisnouanded/kuidas-pakkida-nippe-proffidelt',
+      '/kolimisnouanded/miks-tellida',
+      '/kolimisnouanded/kolimisteenused-kolimisfirmalt-tellides-saad-garantii',
+      '/kolimisnouanded/transport-vs-kolimine-mis-on-erinevus',
+      '/kolimisnouanded/kuidas-kasutada-teiparit',
+      '/kolimisnouanded/kuidas-kolimiskasti-kokku-teipida',
+      '/kolimisnouanded/5-asja-mida-panna-tahele-kui-ees-on-kolimine',
+      '/kolimisnouanded/noude-ja-klaaside-pakkimine',
+      '/kolimisnouanded/kuidas-kujuneb-kolimise-hind',
+      '/kolimisnouanded/kolimine-helsingisse'
+    ]
+  },
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [{ src: '@/plugins/velocity.js', ssr: false }],
+  plugins: [
+    { src: '@/plugins/velocity.js', ssr: false },
+    { src: '@/plugins/vuelidate.js', ssr: false }
+  ],
 
   /*
   ** Nuxt.js modules
@@ -45,14 +65,19 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc: https://bootstrap-vue.js.org/docs/
-    'bootstrap-vue/nuxt'
+    'bootstrap-vue/nuxt',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/google-analytics'
   ],
+  googleAnalytics: {
+    id: 'UA-97565526-3'
+  },
   /*
   ** Axios module configuration
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-    baseURL: 'http://playground.ermine.ee/okmovers-api/wp-json/wp/v2/'
+    baseURL: 'https://cms.okmovers.ee/wp-json/wp/v2/'
   },
 
   /*

@@ -39,6 +39,9 @@ export default {
           content:
             'Meie OK Moversis soovime, et sinu kolimine läheks nii sujuvalt kui võimalik ning selle käigus ei tabaks sind ükski üllatus ega mure. Selleks olemegi koostanud mitmed kolimisnõuanded.'
         }
+      ],
+      link: [
+        { rel: 'canonical', href: 'https://www.okmovers.ee/kolimisnouanded' }
       ]
     }
   }
@@ -52,5 +55,10 @@ export default {
   .post-title {
     color: $orange;
   }
+}
+.slug-side-menu {
+  background-color: $blue;
+  color: white;
+  margin-top: 75px;
 }
 </style>

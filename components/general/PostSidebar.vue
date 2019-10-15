@@ -35,13 +35,11 @@ export default {
 
       this.$axios
         .get(
-          'http://playground.ermine.ee/okmovers-api/wp-json/wp-api-menus/v2/menus/' +
-            this.menuId
+          'https://cms.okmovers.ee/wp-json/wp-api-menus/v2/menus/' + this.menuId
         )
         .then(function(response) {
           self.content = response.data.items
           self.dataIsLoaded = true
-          self.setActive()
         })
     }
   }
@@ -50,6 +48,11 @@ export default {
 
 <style lang="scss">
 @import '@/assets/globals.scss';
+.slug-side-menu {
+  background-color: $blue;
+  color: white;
+  margin-top: 75px;
+}
 .slug-side-menu-ul {
   padding-top: 25px;
   padding-bottom: 25px;

@@ -46,6 +46,13 @@ export default {
           content:
             'Kolime Teie kontori, lao või kauba sihtkohta kiirelt, mugavalt ja turvaliselt. Kui otsid partnerit kolimiseks, siis vali oma ala spetsialistid.'
         }
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          href:
+            'https://www.okmovers.ee/kolimisteenused/kolimisteenused-ettevotetele'
+        }
       ]
     }
   },

@@ -1,5 +1,5 @@
 <template>
-  <div class="frontpage-icon col-sm-12 col-md">
+  <div class="frontpage-icon col-md-12 col-lg">
     <nuxt-link :to="'/kolimisteenused/' + slug">
       <div v-if="imageIsRetrived" class="frontpage-icon-container">
         <img class="frontpage-icon-image" :src="imageSrc">

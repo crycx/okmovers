@@ -32,6 +32,9 @@ export default {
           content:
             'Ladustamisteenused ja vara ladustamine lihtsalt ja soodsalt. Meie ladu on soe, turvatud ning kaup on soovitud ajal alati kättesaadav.'
         }
+      ],
+      link: [
+        { rel: 'canonical', href: 'https://www.okmovers.ee/ladustamisteenused' }
       ]
     }
   }

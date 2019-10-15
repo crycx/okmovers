@@ -105,5 +105,12 @@ export default {
       flex: 0 0 33%;
     }
   }
+  @media screen and (max-width: $lg) {
+    .text-container {
+      p {
+        font-size: 14px;
+      }
+    }
+  }
 }
 </style>

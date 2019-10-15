@@ -44,6 +44,13 @@ export default {
           content:
             'Utiliseerime ja transpordime vana mööblit ning teostame kodumasinate äravedu. Utiliseerime vastavalt soovile kas ühe eseme või terve korteri mööbli kaupa.'
         }
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          href:
+            'https://www.okmovers.ee/lisateenused/vana-moobli-transport-ja-utiliseerimine'
+        }
       ]
     }
   },

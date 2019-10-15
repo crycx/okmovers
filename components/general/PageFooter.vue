@@ -88,6 +88,10 @@ export default {
         em {
           color: $orange;
           font-style: normal;
+          a {
+            color: $orange;
+            font-style: normal;
+          }
         }
       }
     }
@@ -100,11 +104,19 @@ export default {
         em {
           color: $green;
           font-style: normal;
+          a {
+            color: $orange;
+            font-style: normal;
+          }
         }
         strong {
           font-weight: 600;
           color: $orange;
           font-weight: normal;
+          a {
+            color: $orange;
+            font-style: normal;
+          }
         }
       }
     }
@@ -120,6 +132,10 @@ export default {
         em {
           color: $orange;
           font-style: normal;
+          a {
+            color: $orange;
+            font-style: normal;
+          }
         }
       }
     }

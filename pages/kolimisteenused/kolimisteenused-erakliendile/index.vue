@@ -46,6 +46,13 @@ export default {
           content:
             'Kolimisteenused sinu kodu kolimiseks oma ala tippudelt. Vali ettevõte kellel on eraisikute kolimisega pikaaegne kogemus ning kes hoolib sinu vara turvalisusest samapalju kui sa ise '
         }
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          href:
+            'https://www.okmovers.ee/kolimisteenused/kolimisteenused-erakliendile'
+        }
       ]
     }
   },

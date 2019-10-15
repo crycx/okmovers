@@ -1,7 +1,7 @@
 <template>
   <div class="navbar-wrapper">
     <div class="row">
-      <b-navbar id="navbar" toggleable="sm" class="navbar" type="dark">
+      <b-navbar id="navbar" toggleable="lg" class="navbar" type="dark">
         <b-navbar-brand>
           <nuxt-link to="/">
             <img
@@ -10,11 +10,11 @@
             >
           </nuxt-link>
         </b-navbar-brand>
-        <div class="phone-mobile d-sm-block d-md-none">
+        <div class="phone-mobile d-md-block d-lg-none">
           <div class="row phone-mobile-row">
             <img class="phone-mobile-logo" src="@/assets/phone.png">
-            <a class="phone-mobile-text" href="tel:5047817">
-              5047817
+            <a class="phone-mobile-text" href="tel:5047187">
+              5047187
             </a>
           </div>
         </div>
@@ -26,10 +26,10 @@
             </nuxt-link>
           </b-navbar-nav>
           <div class="info-container">
-            <div class="row d-none d-md-flex">
+            <div class="row d-none d-lg-flex">
               <img class="phone-mobile-logo-small" src="@/assets/phone.png">
-              <a class="phone-text-small" href="tel:5047817">
-                5047817
+              <a class="phone-text-small" href="tel:5047187">
+                5047187
               </a>
             </div>
             <div class="row mail-row">
@@ -60,9 +60,7 @@ export default {
     getNavMenu: function() {
       const self = this
       this.$axios
-        .get(
-          'http://playground.ermine.ee/okmovers-api/wp-json/wp-api-menus/v2/menus/2'
-        )
+        .get('https://cms.okmovers.ee/wp-json/wp-api-menus/v2/menus/2')
         .then(function(response) {
           self.menuItems = response.data.items
         })
@@ -91,7 +89,7 @@ export default {
   height: 50px;
   width: 50px;
 }
-@media screen and (max-width: $md) {
+@media screen and (max-width: $lg) {
   .navbar {
     height: 70px;
     padding: 0;
@@ -105,6 +103,10 @@ export default {
   .navbar-logo {
     height: 70px;
     width: 70px;
+  }
+  .info-container {
+    padding-bottom: 20px;
+    border-bottom: 2px solid $orange;
   }
 }
 .navbar-brand {
@@ -196,7 +198,42 @@ export default {
     }
   }
 }
-@media screen and (max-width: $md) {
+@media screen and (max-width: 1666px) {
+  .info-container {
+    a {
+      font-size: 10px;
+    }
+  }
+}
+@media screen and (max-width: 1470px) {
+  .navbar-nav {
+    a {
+      font-size: 14px;
+    }
+  }
+}
+@media screen and (max-width: 1308px) {
+  .navbar-nav {
+    a {
+      font-size: 12px;
+    }
+  }
+}
+@media screen and (max-width: 1272px) {
+  .info-container {
+    a {
+      font-size: 9px;
+    }
+  }
+}
+@media screen and (max-width: 1150px) {
+  .navbar-nav {
+    a {
+      font-size: 10px;
+    }
+  }
+}
+@media screen and (max-width: $lg) {
   .info-container {
     background-color: $blue;
     width: 100%;
@@ -207,7 +244,8 @@ export default {
     }
     a {
       color: $orange;
-      font-weight: 500;
+      font-weight: 600;
+      font-size: 12px;
       &:hover {
         color: $orange-dark;
         text-decoration: none;
@@ -229,6 +267,7 @@ export default {
     a {
       margin-top: 5px;
       margin-bottom: 5px;
+      font-size: 12px;
       &:after {
         content: '';
         background-color: transparent;

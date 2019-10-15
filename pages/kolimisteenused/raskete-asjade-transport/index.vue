@@ -46,6 +46,13 @@ export default {
           content:
             'Seifide, klaverite ja muude raskete esemete transport, tõsted ja paigaldamine, seda kiirelt ja kvaliteetselt. Vali pikaajalised kogemused ja kolimisvaldkonna tippspetsialistid.'
         }
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          href:
+            'https://www.okmovers.ee/kolimisteenused/raskete-asjade-transport'
+        }
       ]
     }
   },

@@ -46,6 +46,13 @@ export default {
           content:
             'OK Movers aitab rahvusvahelisel kolimisel üle terve maailma – alates dokumentide vormistamisest kuni mahalaadimiseni sihtkohas. Vali professionaalne kolimisteenus ning kolimine onmurevaba.'
         }
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          href:
+            'https://www.okmovers.ee/kolimisteenused/rahvusvaheline-kolimisteenus'
+        }
       ]
     }
   },

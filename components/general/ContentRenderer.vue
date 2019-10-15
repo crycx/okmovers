@@ -87,11 +87,13 @@ export default {
   }
   .content-container {
     text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
     .row {
       align-content: center;
       align-items: center;
-      margin-top: 15px;
-      margin-bottom: 15px;
+      margin-top: 0;
+      margin-bottom: 0;
     }
   }
 }

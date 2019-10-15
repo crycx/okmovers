@@ -32,9 +32,11 @@ export default {
   methods: {
     getData: function() {
       const self = this
-      this.$axios.get('posts?categories=8').then(function(response) {
-        self.content = response.data
-      })
+      this.$axios
+        .get('posts?categories=8&per_page=14')
+        .then(function(response) {
+          self.content = response.data
+        })
     }
   }
 }

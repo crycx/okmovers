@@ -46,6 +46,12 @@ export default {
           content:
             'Pakume masinate, seadmete, erikujuliste ning üldiselt keeruliselt transporditavate esemete transporti ja kolimist. Meil on pikajaline kogemus erivedude valdkonnas ning aitame alati kõigega. '
         }
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          href: 'https://www.okmovers.ee/kolimisteenused/eritransport'
+        }
       ]
     }
   },

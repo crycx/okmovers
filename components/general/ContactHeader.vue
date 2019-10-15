@@ -1,10 +1,10 @@
 <template>
   <div class="contact-header container">
     <div class="row">
-      <div v-if="imageIsLoaded" class="col-2 offset-2 contact-header-logo-col">
+      <div v-if="imageIsLoaded" class="col-lg-2 col-sm-12 offset-lg-2 contact-header-logo-col">
         <img class="contact-header-logo" :src="imageUrl">
       </div>
-      <div v-if="contentIsLoaded" class="col-6 contact-header-text-col" v-html="content" />
+      <div v-if="contentIsLoaded" class="col-lg-6 col-sm-12 contact-header-text-col" v-html="content" />
     </div>
   </div>
   </div>
@@ -51,6 +51,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/assets/globals.scss';
 .contact-header {
   margin-top: 15px;
   margin-bottom: 15px;
@@ -69,8 +70,21 @@ export default {
   justify-content: center;
   align-items: center;
   p {
+    justify-content: center;
+    text-align: center;
     font-size: 16px;
     font-weight: 500;
+  }
+}
+@media screen and (max-width: $lg) {
+  .contact-header-text-col {
+    margin-top: 15px;
+    p {
+      justify-content: center;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 500;
+    }
   }
 }
 </style>

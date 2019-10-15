@@ -46,6 +46,12 @@ export default {
           content:
             'Kaitse oma vara tellides professionaalne pakkimine meilt. Tagame alati teie vara turvalise pakkimise ja kolimise.'
         }
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          href: 'https://www.okmovers.ee/kolimisteenused/pakkimine'
+        }
       ]
     }
   },

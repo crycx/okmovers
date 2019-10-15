@@ -8,11 +8,11 @@
         <div class="underline" />
       </div>
     </div>
-    <div class="row">
+    <div class="row review-row">
       <div class="col-1 reviews-button-col d-none d-md-flex">
         <button class="reviews-button reviews-button-left" />
       </div>
-      <div class="col-sm-12 col-md-10">
+      <div class="col-sm-12 col-md-10 review-cont">
         <div v-if="reviewsAreLoaded" class="row">
           <review v-for="item in content" :key="item.id" :title="item.title" :content="item.content" :image-url="item.imageUrl" />
         </div>
@@ -120,6 +120,19 @@ export default {
         display: flex;
         color: $orange;
       }
+    }
+  }
+}
+@media screen and (max-width: $lg) {
+  .review-row {
+    margin: 0;
+  }
+  .review-cont {
+    margin: 0;
+    padding-right: 10px;
+    padding-left: 10px;
+    .row {
+      margin: 0;
     }
   }
 }
