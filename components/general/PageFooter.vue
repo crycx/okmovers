@@ -141,6 +141,10 @@ export default {
     }
   }
   @media screen and (max-width: $md) {
+    .left-data-container,
+    .center-data-container {
+      margin-bottom: 25px;
+    }
     .left-data-text,
     .right-data-text,
     .center-data-text {

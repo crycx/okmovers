@@ -128,6 +128,12 @@ export default {
   padding-left: 20%;
   padding-right: 20%;
 }
+@media screen and (max-width: 1330px) {
+  .player-container {
+    height: 300px;
+    width: 533px;
+  }
+}
 @media screen and (max-width: 1270px) {
   .frontpage-button {
     font-size: 18px;
@@ -138,6 +144,12 @@ export default {
   .frontpage-button {
     font-size: 14px;
     width: 100%;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .player-container {
+    height: 270px;
+    width: 480px;
   }
 }
 @media screen and (max-width: 1080px) {

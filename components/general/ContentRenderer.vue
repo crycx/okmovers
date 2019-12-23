@@ -81,6 +81,13 @@ export default {
     max-width: 150px;
   }
 }
+.wp-block-embed-youtube {
+  .wp-block-embed__wrapper {
+    iframe {
+      max-width: 100%;
+    }
+  }
+}
 @media screen and (max-width: $md) {
   .wp-block-image {
     display: none;

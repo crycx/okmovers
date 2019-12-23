@@ -88,52 +88,67 @@ export default {
   },
   methods: {
     sendForm: function() {
-      const self = this
-      const quoteFormData = new FormData()
-      quoteFormData.set('name', this.form.name)
-      quoteFormData.set('email', this.form.email)
-      quoteFormData.set('phone', this.form.phone)
-      quoteFormData.set('date', this.form.date)
-      quoteFormData.set('start_floor', this.form.startFloor)
-      quoteFormData.set('end_floor', this.form.endFloor)
-      quoteFormData.set('list', this.form.list)
+      if (!this.evalForm()) {
+        console.log('bad')
+        this.displayFailure(this, 'Vaadake, kas kõik väljad on täidetud!')
+      } else {
+        const self = this
+        const quoteFormData = new FormData()
+        quoteFormData.set('name', this.form.name)
+        quoteFormData.set('email', this.form.email)
+        quoteFormData.set('phone', this.form.phone)
+        quoteFormData.set('date', this.form.date)
+        quoteFormData.set('start_floor', this.form.startFloor)
+        quoteFormData.set('end_floor', this.form.endFloor)
+        quoteFormData.set('list', this.form.list)
 
-      this.loading = true
-      this.$axios({
-        method: 'post',
-        url: 'https://emailservice.ermine.ee/quote',
-        data: quoteFormData
-      })
-        .then(function(response) {
-          if (response.status === 200) {
-            self.loading = false
-            self.done = true
-            self.displaySuccess(self)
-            self.form.name = ''
-            self.form.email = ''
-            self.form.phone = ''
-            self.form.date = ''
-            self.form.startFloor = ''
-            self.form.endFloor = ''
-            self.form.list = ''
-          } else {
+        this.loading = true
+        this.$axios({
+          method: 'post',
+          url: 'https://emailservice.ermine.ee/quote',
+          data: quoteFormData
+        })
+          .then(function(response) {
+            if (response.status === 200) {
+              self.loading = false
+              self.done = true
+              self.displaySuccess(self)
+              self.form.name = ''
+              self.form.email = ''
+              self.form.phone = ''
+              self.form.date = ''
+              self.form.startFloor = ''
+              self.form.endFloor = ''
+              self.form.list = ''
+            } else {
+              self.loading = false
+              self.done = true
+              self.displayFailure(
+                self,
+                'Midagi läks valesti! Proovige hiljem uuesti.'
+              )
+            }
+          })
+          .catch(function(error) {
+            console.log(error)
             self.loading = false
             self.done = true
             self.displayFailure(
               self,
-              'Midagi läks valesti! Proovige hiljem uuesti.'
+              'Midagi läks valesti. Palun kirjutage email: <a href="mailto:info@okmovers.ee">info@okmovers.ee</a>'
             )
-          }
-        })
-        .catch(function(error) {
-          console.log(error)
-          self.loading = false
-          self.done = true
-          self.displayFailure(
-            self,
-            'Midagi läks valesti. Palun kirjutage email: <a href="mailto:info@okmovers.ee">info@okmovers.ee</a>'
-          )
-        })
+          })
+      }
+    },
+    evalForm: function() {
+      const valList = Object.values(this.form)
+      let formFilled = true
+      for (let i = 0; i < valList.length; i++) {
+        if (valList[i] === '') {
+          formFilled = false
+        }
+      }
+      return formFilled
     },
     displaySuccess: function(ctx) {
       ctx.messageSent = true
@@ -193,6 +208,9 @@ export default {
       }
     }
   }
+}
+.form-error {
+  border-color: red;
 }
 .alert {
   text-align: center;
