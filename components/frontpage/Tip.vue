@@ -1,12 +1,12 @@
 <template>
-  <div class="col-md-2 col-sm-6 tip-col">
+  <div v-if="imageIsLoaded" class="col-md-2 col-sm-6 tip-col">
     <nuxt-link
       :to="'/kolimisnouanded/' + slug"
     >
       <div
         class="tip-container"
       >
-        <img src="~/assets/delivery-package.png" class="tip-logo">
+        <img :src="imgUrl" class="tip-logo">
       </div>
     
       <div class="text-container">
@@ -26,6 +26,28 @@ export default {
     slug: {
       type: String,
       default: ''
+    },
+    imgUrl: {
+      type: Number,
+      default: null
+    }
+  },
+  data() {
+    return {
+      imageIsLoaded: false
+    }
+  },
+  mounted() {
+    this.loadImage()
+  },
+  methods: {
+    loadImage() {
+      const self = this
+      this.$axios.get('media/' + this.imgUrl).then(function(response) {
+        self.imgUrl = response.data.guid.rendered
+        console.log(self.imgUrl)
+        self.imageIsLoaded = true
+      })
     }
   }
 }
@@ -70,17 +92,11 @@ export default {
       transition-property: color;
       transition-duration: 0.125s;
       transition-timing-function: linear;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-      word-break: break-all;
       -ms-hyphens: auto;
       -moz-hyphens: auto;
       -webkit-hyphens: auto;
       hyphens: auto;
       p {
-        word-break: break-all;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
         -ms-hyphens: auto;
         -moz-hyphens: auto;
         -webkit-hyphens: auto;

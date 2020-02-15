@@ -10,6 +10,7 @@
         :key="item.id"
         :title="item.title.rendered"
         :slug="item.slug"
+        :img-url="item.featured_media"
       />
     </div>
   </b-jumbotron>
