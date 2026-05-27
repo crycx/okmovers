@@ -1,0 +1,19 @@
+OK Movers
+Website: https://okmovers.ee
+Purpose: Moving services, transport, storage, packing and relocation advice in Estonia.
+
+Preferred canonical host: https://okmovers.ee
+Primary language: et
+
+Key sections:
+- Homepage
+- Services
+- Price request
+- About company
+- Contact
+- Advice articles / blog
+
+Content policy:
+- Prefer current published WordPress page and post content.
+- Use canonical URLs when summarizing or citing pages.
+- Do not treat staging or temporary frontend builds as the primary source.
