@@ -8,9 +8,9 @@ $section = $args['section'] ?? [
 <section class="page-section">
     <div class="container">
         <div class="cta-box stack-md">
-            <h2><?php echo esc_html($section['title'] ?? ''); ?></h2>
+            <?php okmovers_render_section_title((string) ($section['title'] ?? ''), 'cta'); ?>
             <?php if (! empty($section['text'])) : ?>
-                <p><?php echo esc_html($section['text']); ?></p>
+                <div class="prose"><?php echo wp_kses_post((string) $section['text']); ?></div>
             <?php endif; ?>
             <?php okmovers_render_button($section['button'] ?? [], 'button button-primary'); ?>
         </div>

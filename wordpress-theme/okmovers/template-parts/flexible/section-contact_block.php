@@ -9,7 +9,7 @@ $section = $args['section'] ?? [
 <section class="page-section page-section--muted">
     <div class="container contact-block">
         <div class="stack-md prose">
-            <h2><?php echo esc_html($section['title'] ?? ''); ?></h2>
+            <?php okmovers_render_section_title((string) ($section['title'] ?? ''), 'contact_block'); ?>
             <?php echo wp_kses_post((string) ($section['text'] ?? okmovers_get_contact_details_markup())); ?>
             <div class="contact-details prose">
                 <?php echo wp_kses_post(okmovers_get_contact_details_markup()); ?>

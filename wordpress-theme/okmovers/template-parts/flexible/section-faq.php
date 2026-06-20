@@ -10,7 +10,7 @@ $items = is_array($section['items'] ?? null) ? $section['items'] : [];
     <section class="page-section">
         <div class="container stack-lg">
             <div class="section-heading stack-sm">
-                <h2><?php echo esc_html($section['title'] ?? ''); ?></h2>
+                <?php okmovers_render_section_title((string) ($section['title'] ?? ''), 'faq'); ?>
             </div>
 
             <div class="faq-list">

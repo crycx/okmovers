@@ -12,7 +12,7 @@ $position = ($section['image_position'] ?? 'right') === 'left' ? ' text-image--r
 <section class="page-section">
     <div class="container text-image<?php echo esc_attr($position); ?>">
         <div class="stack-md prose">
-            <h2><?php echo esc_html($section['title'] ?? ''); ?></h2>
+            <?php okmovers_render_section_title((string) ($section['title'] ?? ''), 'text_image'); ?>
             <?php echo wp_kses_post((string) ($section['text'] ?? '')); ?>
         </div>
         <div class="text-image__media">

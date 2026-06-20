@@ -10,6 +10,7 @@ $section = $args['section'] ?? [
 ];
 
 $image_url = okmovers_get_image_url($section['image'] ?? [], 'okmovers-hero');
+$video_embed_url = okmovers_get_embed_video_url((string) ($section['video_url'] ?? ''));
 ?>
 <section class="page-hero">
     <div class="container page-hero__grid">
@@ -17,9 +18,9 @@ $image_url = okmovers_get_image_url($section['image'] ?? [], 'okmovers-hero');
             <?php if (! empty($section['eyebrow'])) : ?>
                 <p class="section-eyebrow"><?php echo esc_html($section['eyebrow']); ?></p>
             <?php endif; ?>
-            <h1><?php echo esc_html($section['title'] ?? ''); ?></h1>
+            <?php okmovers_render_section_title((string) ($section['title'] ?? ''), 'hero', 'h1'); ?>
             <?php if (! empty($section['intro'])) : ?>
-                <div class="prose page-hero__intro"><?php echo wp_kses_post(wpautop($section['intro'])); ?></div>
+                <div class="prose page-hero__intro"><?php echo wp_kses_post((string) $section['intro']); ?></div>
             <?php endif; ?>
             <div class="button-row">
                 <?php okmovers_render_button($section['primary_button'] ?? [], 'button button-primary'); ?>
@@ -28,9 +29,9 @@ $image_url = okmovers_get_image_url($section['image'] ?? [], 'okmovers-hero');
         </div>
 
         <div class="page-hero__media">
-            <?php if (! empty($section['video_url'])) : ?>
+            <?php if ($video_embed_url !== '') : ?>
                 <div class="responsive-video">
-                    <iframe src="<?php echo esc_url($section['video_url']); ?>" title="<?php esc_attr_e('Hero video', 'okmovers'); ?>" loading="lazy" allowfullscreen></iframe>
+                    <iframe src="<?php echo esc_url($video_embed_url); ?>" title="<?php esc_attr_e('Hero video', 'okmovers'); ?>" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             <?php elseif ($image_url) : ?>
                 <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($section['title'] ?? get_bloginfo('name')); ?>">
