@@ -85,3 +85,4 @@ sw.*
 
 server/
 ignored files/
+.vscode/sftp.json

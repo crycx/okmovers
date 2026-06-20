@@ -61,6 +61,7 @@ function okmovers_enqueue_assets(): void
         'menuLabelClose'  => __('Close menu', 'okmovers'),
         'formStatus'      => sanitize_key((string) wp_unslash($_GET['form-status'] ?? '')),
         'formMessageId'   => sanitize_key((string) wp_unslash($_GET['form-message'] ?? '')),
+        'ajaxUrl'         => admin_url('admin-ajax.php'),
     ]);
 }
 

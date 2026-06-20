@@ -21,9 +21,9 @@ $articles = new WP_Query($query_args);
 <section class="page-section">
     <div class="container stack-lg">
         <div class="section-heading stack-sm">
-            <h2><?php echo esc_html($section['title'] ?? ''); ?></h2>
+            <?php okmovers_render_section_title((string) ($section['title'] ?? ''), 'article_feed'); ?>
             <?php if (! empty($section['intro'])) : ?>
-                <p class="section-intro"><?php echo esc_html($section['intro']); ?></p>
+                <div class="section-intro prose"><?php echo wp_kses_post((string) $section['intro']); ?></div>
             <?php endif; ?>
         </div>
 

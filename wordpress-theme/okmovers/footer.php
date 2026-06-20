@@ -9,7 +9,7 @@
                     <?php echo wp_kses_post((string) okmovers_get_option_field('footer_middle_column', '<p><strong>OK Movers</strong></p><p>Kolimine, transport, ladustamine</p>')); ?>
                 </div>
                 <div class="site-footer__column">
-                    <?php echo wp_kses_post((string) okmovers_get_option_field('footer_right_column', '<p><strong>Vota uhendust</strong></p><p>Kiire hinnaparing ja usaldusvaarsed kolimislahendused.</p>')); ?>
+                    <?php echo wp_kses_post((string) okmovers_get_option_field('footer_right_column', '<p><strong>Võta ühendust</strong></p><p>Kiire hinnapäring ja usaldusväärsed kolimislahendused.</p>')); ?>
 
                     <?php $social_links = okmovers_get_social_links(); ?>
                     <?php if ($social_links) : ?>

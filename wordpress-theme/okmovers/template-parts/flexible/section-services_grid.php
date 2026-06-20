@@ -10,9 +10,9 @@ $items = is_array($section['items'] ?? null) ? $section['items'] : [];
 <section class="page-section page-section--muted">
     <div class="container stack-lg">
         <div class="section-heading stack-sm">
-            <h2><?php echo esc_html($section['title'] ?? ''); ?></h2>
+            <?php okmovers_render_section_title((string) ($section['title'] ?? ''), 'services_grid'); ?>
             <?php if (! empty($section['intro'])) : ?>
-                <p class="section-intro"><?php echo esc_html($section['intro']); ?></p>
+                <div class="section-intro prose"><?php echo wp_kses_post((string) $section['intro']); ?></div>
             <?php endif; ?>
         </div>
 
@@ -24,7 +24,7 @@ $items = is_array($section['items'] ?? null) ? $section['items'] : [];
                         <img class="service-card__icon" src="<?php echo esc_url($icon_url); ?>" alt="">
                     <?php endif; ?>
                     <h3><?php echo esc_html($item['title'] ?? ''); ?></h3>
-                    <p><?php echo esc_html($item['text'] ?? ''); ?></p>
+                    <div class="prose"><?php echo wp_kses_post((string) ($item['text'] ?? '')); ?></div>
                     <?php okmovers_render_button($item['link'] ?? [], 'text-link'); ?>
                 </article>
             <?php endforeach; ?>

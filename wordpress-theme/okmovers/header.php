@@ -37,7 +37,7 @@ $email = okmovers_get_option_field('company_email', 'info@okmovers.ee');
                     'theme_location' => 'primary',
                     'container'      => false,
                     'menu_class'     => 'site-navigation__menu',
-                    'fallback_cb'    => false,
+                    'fallback_cb'    => 'okmovers_primary_menu_fallback',
                 ]);
                 ?>
             </nav>
