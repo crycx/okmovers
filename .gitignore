@@ -84,3 +84,4 @@ dist
 sw.*
 
 server/
+.vscode/sftp.json
