@@ -179,13 +179,17 @@ function okmovers_get_contact_details_markup(): string
     $phone = okmovers_get_option_field('company_phone', '+372 504 7187');
     $email = okmovers_get_option_field('company_email', 'info@okmovers.ee');
     $address = okmovers_get_option_field('company_address', 'Tallinn, Eesti');
-    $hours = okmovers_get_option_field('company_hours', __('Mon-Fri 08:00-18:00', 'okmovers'));
+    $registration_code = okmovers_get_option_field('company_registration_code', '11428959');
+    $kmkr_code = okmovers_get_option_field('company_kmkr_code', 'EE101185934');
+    // $hours = okmovers_get_option_field('company_hours', __('Mon-Fri 08:00-18:00', 'okmovers'));
 
     $items = [
         '<p><strong>' . esc_html__('Telefon', 'okmovers') . ':</strong> <a href="tel:' . esc_attr(preg_replace('/\s+/', '', (string) $phone)) . '">' . esc_html($phone) . '</a></p>',
         '<p><strong>' . esc_html__('E-post', 'okmovers') . ':</strong> <a href="mailto:' . esc_attr($email) . '">' . esc_html($email) . '</a></p>',
         '<p><strong>' . esc_html__('Aadress', 'okmovers') . ':</strong> ' . esc_html($address) . '</p>',
-        '<p><strong>' . esc_html__('Lahtiolekuajad', 'okmovers') . ':</strong> ' . esc_html($hours) . '</p>',
+        '<p><strong>' . esc_html__('Registrikood', 'okmovers') . ':</strong> ' . esc_html($registration_code) . '</p>',
+        '<p><strong>' . esc_html__('KMKR nr', 'okmovers') . ':</strong> ' . esc_html($kmkr_code) . '</p>',
+        // '<p><strong>' . esc_html__('Lahtiolekuajad', 'okmovers') . ':</strong> ' . esc_html($hours) . '</p>',
     ];
 
     return implode('', $items);
