@@ -167,9 +167,27 @@ document.addEventListener('DOMContentLoaded', function () {
         var visibleCount = Math.min(getVisibleCount(), items.length);
         var visibleMap = {};
         var i;
+        var showAllOnMobile = config.mobileScrollAll && window.innerWidth <= 720;
 
         if (track) {
-          track.style.setProperty(config.columnsVariable, String(visibleCount));
+          track.style.setProperty(config.columnsVariable, String(showAllOnMobile ? items.length : visibleCount));
+        }
+
+        if (showAllOnMobile) {
+          items.forEach(function (item) {
+            item.hidden = false;
+            item.setAttribute('aria-hidden', 'false');
+          });
+
+          if (prevButton) {
+            prevButton.disabled = true;
+          }
+
+          if (nextButton) {
+            nextButton.disabled = true;
+          }
+
+          return;
         }
 
         for (i = 0; i < visibleCount; i += 1) {
@@ -218,6 +236,7 @@ document.addEventListener('DOMContentLoaded', function () {
     trackSelector: '[data-clients-track]',
     columnsVariable: '--clients-columns',
     desktopVisibleCount: 6,
+    mobileScrollAll: true,
   });
 
   document.querySelectorAll('[data-testimonials-carousel]').forEach(function (carousel) {
