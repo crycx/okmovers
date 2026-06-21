@@ -15,10 +15,10 @@ $email = okmovers_get_option_field('company_email', 'info@okmovers.ee');
     <header class="site-header">
         <div class="site-header__inner container">
             <div class="site-branding">
-                <a class="site-branding__link" href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-                    <?php if (has_custom_logo()) : ?>
-                        <?php the_custom_logo(); ?>
-                    <?php else : ?>
+              <?php if (has_custom_logo()) : ?>
+                <?php the_custom_logo(); ?>
+                <?php else : ?>
+                        <a class="site-branding__link" href="<?php echo esc_url(home_url('/')); ?>" rel="home">
                         <span class="site-branding__title"><?php bloginfo('name'); ?></span>
                     <?php endif; ?>
                 </a>
