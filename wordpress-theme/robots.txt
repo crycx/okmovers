@@ -1,7 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://okmovers.ee/wp-sitemap.xml
-
-# If a dedicated SEO plugin generates the sitemap instead,
-# update this path during deployment.

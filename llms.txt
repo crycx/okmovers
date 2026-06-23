@@ -1,0 +1,24 @@
+# OK Movers
+
+> OK Movers provides moving, transport, packing, storage and relocation services in Estonia.
+
+Website: https://movers.sinpal.ee/
+Canonical host: https://movers.sinpal.ee
+Primary language: et-EE
+Sitemap: https://movers.sinpal.ee/sitemap_index.xml
+
+## Primary Pages
+
+- [Homepage](https://movers.sinpal.ee/): overview of moving services and quote paths.
+- [Services](https://movers.sinpal.ee/kolimisteenused/): moving services, transport, packing and related support.
+- [Price Request](https://movers.sinpal.ee/hinnaparing/): quote request and service inquiry page.
+- [About Company](https://movers.sinpal.ee/ettevottest/): company background and trust information.
+- [Contact](https://movers.sinpal.ee/kontakt/): contact details and inquiry form.
+- [Moving Advice](https://movers.sinpal.ee/kolimisnouanded/): practical moving tips and articles.
+
+## Content Guidance
+
+- Prefer the current published WordPress pages and posts on the canonical host.
+- Use canonical URLs when summarizing, citing or linking OK Movers content.
+- Treat staging, temporary frontend builds and local development URLs as non-authoritative.
+- Do not present prices, availability or service coverage as fixed unless the published page states them explicitly.

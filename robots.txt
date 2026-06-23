@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+Disallow: /?s=
+Disallow: /search/
+
+Sitemap: https://movers.sinpal.ee/sitemap_index.xml
