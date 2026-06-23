@@ -360,6 +360,10 @@ h3 {
   box-shadow: var(--shadow-soft);
 }
 
+.testimonial-card {
+  box-shadow: none;
+}
+
 .service-card,
 .benefit-card,
 .entry-card,
@@ -563,7 +567,7 @@ h3 {
   background: rgba(255, 255, 255, 0.9);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-soft);
+  /* box-shadow: var(--shadow-soft); */
   display: flex;
   align-items: center;
   justify-content: center;

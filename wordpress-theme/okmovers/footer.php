@@ -25,7 +25,7 @@
             </div>
 
             <div class="site-footer__bottom">
-                <p>&copy; <?php echo esc_html(wp_date('Y')); ?> <?php bloginfo('name'); ?></p>
+                <p>&copy; <?php echo esc_html(wp_date('Y')); ?> <span style="color: var(--color-accent); font-weight: bold;"><?php bloginfo('name'); ?></span></p>
                 <div id="evul">
                   <a href="https://evul.ee/liikmed/11428959-OK-MOVERS-OU/sertifikaat" title="Vaata EVUL sertifikaati" target="_blank" style="position: relative; display: block; height: 60px; width: 60px;">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 198.58246 198.55114" height="100%" width="100%">
