@@ -15,8 +15,18 @@
                     <?php if ($social_links) : ?>
                         <div class="site-footer__socials">
                             <?php foreach ($social_links as $social_link) : ?>
-                                <a href="<?php echo esc_url($social_link['url'] ?? '#'); ?>" target="_blank" rel="noreferrer noopener">
-                                    <?php echo esc_html($social_link['label'] ?? __('Link', 'okmovers')); ?>
+                                <?php
+                                $social_label = (string) ($social_link['label'] ?? __('Link', 'okmovers'));
+                                $social_platform = okmovers_get_social_link_platform($social_link);
+                                $social_icon = okmovers_get_social_link_icon($social_platform);
+                                ?>
+                                <a class="site-footer__social-link<?php echo $social_platform ? ' site-footer__social-link--' . esc_attr($social_platform) : ''; ?>" href="<?php echo esc_url($social_link['url'] ?? '#'); ?>" target="_blank" rel="noreferrer noopener" aria-label="<?php echo esc_attr($social_label); ?>">
+                                    <?php if ($social_icon) : ?>
+                                        <?php echo $social_icon; ?>
+                                        <span class="screen-reader-text"><?php echo esc_html($social_label); ?></span>
+                                    <?php else : ?>
+                                        <?php echo esc_html($social_label); ?>
+                                    <?php endif; ?>
                                 </a>
                             <?php endforeach; ?>
                         </div>

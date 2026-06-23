@@ -529,6 +529,44 @@ function okmovers_get_social_links(): array
     return is_array($links) ? $links : [];
 }
 
+function okmovers_get_social_link_platform(array $social_link): string
+{
+    $label = strtolower((string) ($social_link['label'] ?? ''));
+    $url = strtolower((string) ($social_link['url'] ?? ''));
+    $haystack = $label . ' ' . $url;
+
+    if (strpos($haystack, 'facebook') !== false || strpos($haystack, 'fb.com') !== false) {
+        return 'facebook';
+    }
+
+    if (strpos($haystack, 'linkedin') !== false || strpos($haystack, 'linked.in') !== false) {
+        return 'linkedin';
+    }
+
+    if (strpos($haystack, 'youtube') !== false || strpos($haystack, 'youtu.be') !== false) {
+        return 'youtube';
+    }
+
+    return '';
+}
+
+function okmovers_get_social_link_icon(string $platform): string
+{
+    $icon_files = [
+        'facebook' => 'facebook-logo.png',
+        'linkedin' => 'linkedin-logo.png',
+        'youtube' => 'youtube-logo.png',
+    ];
+
+    if (empty($icon_files[$platform])) {
+        return '';
+    }
+
+    $icon_url = get_template_directory_uri() . '/assets/img/social/' . $icon_files[$platform];
+
+    return '<img src="' . esc_url($icon_url) . '" alt="" aria-hidden="true" loading="lazy" decoding="async">';
+}
+
 function okmovers_get_fallback_reviews(): array
 {
     return [
