@@ -651,3 +651,10 @@ function okmovers_get_fallback_services(): array
 remove_action('wp_head', 'rsd_link');
 remove_action('wp_head', 'wlwmanifest_link');
 remove_action('wp_head', 'wp_generator');
+
+wp_enqueue_style(
+    'okmovers-main-style',
+    get_stylesheet_directory_uri() . '/assets/css/main.css',
+    array(),
+    filemtime(get_stylesheet_directory() . '/assets/css/main.css')
+);
