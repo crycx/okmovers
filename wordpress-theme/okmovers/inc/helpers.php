@@ -41,7 +41,7 @@ function okmovers_primary_menu_fallback(): void
     echo '</ul>';
 }
 
-function okmovers_normalize_link($link, array $fallback = []): array
+function okmovers_normalize_link(string|array $link, array $fallback = []): array
 {
     if (is_array($link) && !empty($link['url'])) {
         return [
@@ -58,7 +58,7 @@ function okmovers_normalize_link($link, array $fallback = []): array
     ];
 }
 
-function okmovers_render_button($link, string $class_name = 'button button-primary'): void
+function okmovers_render_button(string|array $link, string $class_name = 'button button-primary'): void
 {
     $button = okmovers_normalize_link($link);
 
@@ -72,7 +72,7 @@ function okmovers_render_button($link, string $class_name = 'button button-prima
     <?php
 }
 
-function okmovers_get_image_url($image, string $size = 'full'): string
+function okmovers_get_image_url(string|array|int $image, string $size = 'full'): string
 {
     if (is_array($image) && ! empty($image['sizes'][$size])) {
         return (string) $image['sizes'][$size];
@@ -406,7 +406,7 @@ function okmovers_get_section_navigation_menu_items(int $root_id): array
     return $filtered_items;
 }
 
-function okmovers_is_section_navigation_menu_item_current($item, int $post_id): bool
+function okmovers_is_section_navigation_menu_item_current(object $item, int $post_id): bool
 {
     $item_object_id = isset($item->object_id) ? (int) $item->object_id : 0;
 
