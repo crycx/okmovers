@@ -26,6 +26,12 @@ $video_embed_url = okmovers_get_embed_video_url((string) ($section['video_url'] 
                 <?php okmovers_render_button($section['primary_button'] ?? [], 'button button-primary'); ?>
                 <?php okmovers_render_button($section['secondary_button'] ?? [], 'button button-secondary'); ?>
             </div>
+            <div id="evul-top">
+              <a href="https://evul.ee/liikmed/11428959-OK-MOVERS-OU/sertifikaat" title="Vaata EVUL sertifikaati" target="_blank" style="position: relative;display: block;">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/margis.svg" alt="EVUL sertifikaat">
+                <span style="position: absolute; bottom: 0; right: 0; font-size: 1em; line-height: 1; color: #000000; white-space: nowrap;">®</span>
+              </a>
+            </div>
         </div>
 
         <div class="page-hero__media">
