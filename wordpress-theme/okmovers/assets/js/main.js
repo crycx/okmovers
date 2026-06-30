@@ -2,9 +2,22 @@ document.addEventListener('DOMContentLoaded', function () {
   var menuToggle = document.querySelector('.menu-toggle');
   var navigation = document.querySelector('.site-navigation');
   var headerInner = document.querySelector('.site-header__inner');
+  var siteHeader = document.querySelector('.site-header');
+
+  function updateHeaderHeight() {
+    if (!siteHeader) {
+      return;
+    }
+
+    document.documentElement.style.setProperty('--site-header-height', siteHeader.offsetHeight + 'px');
+  }
+
+  updateHeaderHeight();
+  window.addEventListener('resize', updateHeaderHeight);
 
   if (menuToggle && navigation) {
     function setMenuState(isOpen) {
+      updateHeaderHeight();
       navigation.classList.toggle('is-open', isOpen);
       menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       document.body.classList.toggle('menu-open', isOpen);
